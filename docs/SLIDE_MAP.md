@@ -1,0 +1,31 @@
+# Slide map — aligned to `VIDEO_script_3min.md`
+**12 slides · 3:00.** Each slide = one **hero figure you narrate** (from the script) + optional **supporting figures shown silently** on the same slide. You only *talk about* the hero; the supporting panels add visual depth and signal thoroughness without costing narration time. Paths are relative to the `Claude Science Hackathon` folder unless noted.
+
+**Layout rule of thumb:** hero large (left or center, ~60% of the slide, with a one-line title), supporting panels small along the right or bottom (~2 max, uncaptioned or with a 3–4 word tag). Keep Slides 1, 4, and 12 the cleanest — those are the ones that must land instantly.
+
+| # | Time | Slide title (message title) | HERO figure (narrated) | Supporting on slide (silent) |
+|---|---|---|---|---|
+| 1 | 0:00–0:20 | **Is HLA "immune potency" a single axis?** | **Project file** `fig_F1_hypothesis_schematic.png` *(export from project first)* | *(keep clean — title + schematic only)* |
+| 2 | 0:20–0:32 | **Engageability: how permissively an allele engages diverse TCRs** | `cancer arm/F2_tcr_footprint.png` | `engageability master/fig_structure_inventory_by_allele.png` (243 crystal complexes) · `engageability arm/part 1/fig_crest_position_conservation.png` |
+| 3 | 0:32–0:42 | **A genuinely new axis — orthogonal to HED (r = −0.02)** | `cancer arm/F1_engageability_vs_HED.png` (r = −0.02) | `engageability master/fig_engageability_distribution.png` (676 alleles) · `engageability master/fig_axis_orthogonality.png` (per-locus) |
+| 4 | 0:42–0:56 | **Potency isn't one number: breadth and engageability oppose** | `HED pos control arm/fig_hed_vs_engageability_sidebyside.png` | *(keep focused — money slide; at most one small inset)* `HED pos control arm/fig_hed_permutation_null.png` |
+| 5 | 0:56–1:05 | **A multi-axis decomposition: add capacity and CD8** | `capacity arm/fig_capacity_vs_hed.png` | `capacity arm/fig_variance_ci.png` (real axis, SD 10–14× SE) · `capacity arm/fig_within_capacity.png` |
+| 6 | 1:05–1:20 | **Why the germline trade-off can't be answered** | `engageability master/identifiability_theory.png` | `tradeoff arm/fig_tradeoff_engageability_two_arm.png` (the actual null, ρ = +0.037, p = 0.90) |
+| 7 | 1:20–1:35 | **Underpowered by construction — shown blind** | `engageability-tcr diversity arm/fig_mde_power_curve.png` | `engageability-tcr diversity arm/fig_effectiveN_thresholds.png` · `engageability-tcr diversity arm/fig_part2_forest.png` |
+| 8 | 1:35–1:52 | **Follow the power to somatic escape — B2M validates the pipeline** | `somatic selection of apm arm/fig_dnds_stratified.png` ⚠ | `somatic selection of apm arm/fig_dnds_apm.png` (per-gene dN/dS) · `somatic selection of apm arm/fig_pancancer_apm_landscape.png` |
+| 9 | 1:52–2:15 | **The finding: HLA-B\*58:01 is preferentially lost** | `LOH arm/fig_loh_BT_strengths.png` (B\*58:01) | `LOH arm/fig_s11_negcontrol.png` (not a mapping artifact) · `LOH arm/fig_g4_per_allele_loss.png` |
+| 10 | 2:15–2:35 | **Pre-registered, controlled, reproducible** | `LOH arm/fig_g1_positive_control.png` (KRAS G12V OR 5.06) | `LOH arm/fig_g3_breadth.png` (effective-N) · provenance/pre-registration caption strip |
+| 11 | 2:35–2:55 | **What tumors keep are the durable therapy targets** | Translational two-column schematic (`figures/fig_translational_targets.png`) | *(keep clean — schematic only)* |
+| 12 | 2:55–3:00 | **A new axis · a proof · a reproducible lead** | Title card | *(keep clean)* |
+
+## Build notes
+- **Slide 9 speaker note (anticipated question — "is this cancer-type specific?"):** the finding is *pan-cancer, within-patient paired* — cancer type cancels as a within-patient confound but isn't resolved per type; at n = 164 events a per-type split is underpowered (≥20-event floor). Per-cancer-type stratification is future work on a >100k-patient institutional cohort. *(Do not say this on camera; keep it in reserve for judge Q&A.)*
+- **Titles are "message titles," not labels** — each states the takeaway so it reinforces your narration instead of naming the slide. Keep them one line; if a title wraps to two lines on your template, shorten it rather than shrink the font. Slide 12's is a title-card line, not a heading.
+- **You narrate only the hero column.** The supporting panels are on-screen for the same beat but never called out — a viewer's eye registers "there's more here" without you spending words. If a slide feels busy, drop a supporting panel; never drop the hero.
+- **Slide 1 image** (`fig_F1_hypothesis_schematic.png`) is a project file, not in your device folder — I can export it to the folder or place it directly on the slide.
+- **Slide 8 ⚠:** confirm `fig_dnds_stratified.png` is the HLA-A↑ / HLA-C-collapse / B2M-holds diagnostic; if not, `fig_dnds_apm.png` (already listed here as support) is the safe hero swap.
+- **Slide 11 must be created** — the translational two-column schematic (*deleted B\*58:01 = high-pressure peptides + escape risk* vs *retained B\*07:02, B\*08:01, A\*01:01 = escape-durable TCR-T restriction elements*). Only missing asset.
+- **Readability check:** at 1080p a supporting panel below ~30% width loses its axis labels. That's fine — they read as "evidence exists," not "read me." Keep any panel whose *point* matters (the hero) large.
+
+## Every figure now has a home
+With supporting panels distributed across slides, the full set is used: the three self-caught false positives, the negative/positive controls, the other axes, and the power/floor diagnostics all appear on the relevant beat's slide. Nothing needs a separate appendix unless you want one. Figures still not placed anywhere (available if you want to swap): drug-HSR degeneracy (`drug hsr arm/fig_drug_hsr_expanded.png`), infection multivirus collapse (`infection control arm/fig_infection_arm_multivirus.png`), α3 conserved axis (`a3 domain arm/fig_alpha3_polymorphism.png`), HED-by-locus (`HED arm/fig_hed_by_locus.png`), autoimmune-risk axis (`autoimmune risk arm/fig_autoimmune_risk_axis.png`), IEDB ascertainment bias (`peptide selection/fig1_iedb_ascertainment_bias.png`), Bw4/Bw6 KIR self-refutation (`LOH arm/fig_s10_locusB_battery.png`) — the last three are the strongest "rigor" adds if a slide has room.
