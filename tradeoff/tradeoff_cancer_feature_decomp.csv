@@ -1,0 +1,6 @@
+feature,raw,+freq,+HED,+freq+HED
+engageability_A (composite),+0.101(p0.13),+0.097(p0.08),+0.083(p0.13),+0.075(p0.11)
+z_het (VARIABLE),+0.079(p0.26),+0.063(p0.20),+0.109(p0.07),+0.089(p0.05)
+z_absnetchg (VARIABLE),-0.045(p0.55),-0.048(p0.47),-0.013(p0.85),-0.014(p0.82)
+z_hydimb (VARIABLE),-0.009(p0.81),-0.032(p0.31),+0.014(p0.73),-0.011(p0.74)
+con_heterogeneity (CONSERVED),-0.097(p0.97),-0.850(p0.70),+0.073(p0.97),-0.882(p0.67)

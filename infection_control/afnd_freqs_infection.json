@@ -1,0 +1,58 @@
+[
+ {
+  "allele": "B*57:03",
+  "locus": "B",
+  "n_pops": 80,
+  "freq_median": 0.00285,
+  "freq_max": 0.069,
+  "freq_p90": 0.03092
+ },
+ {
+  "allele": "B*14:02",
+  "locus": "B",
+  "n_pops": 93,
+  "freq_median": 0.0216,
+  "freq_max": 0.1054,
+  "freq_p90": 0.0529
+ },
+ {
+  "allele": "B*81:01",
+  "locus": "B",
+  "n_pops": 73,
+  "freq_median": 0.005,
+  "freq_max": 0.079,
+  "freq_p90": 0.03974
+ },
+ {
+  "allele": "A*25:01",
+  "locus": "A",
+  "n_pops": 79,
+  "freq_median": 0.0118,
+  "freq_max": 0.042,
+  "freq_p90": 0.03026
+ },
+ {
+  "allele": "B*35:03",
+  "locus": "B",
+  "n_pops": 95,
+  "freq_median": 0.0218,
+  "freq_max": 0.111,
+  "freq_p90": 0.07754
+ },
+ {
+  "allele": "B*53:01",
+  "locus": "B",
+  "n_pops": 88,
+  "freq_median": 0.0098,
+  "freq_max": 0.223,
+  "freq_p90": 0.1021
+ },
+ {
+  "allele": "B*58:02",
+  "locus": "B",
+  "n_pops": 66,
+  "freq_median": 0.0114,
+  "freq_max": 0.143,
+  "freq_p90": 0.10725
+ }
+]

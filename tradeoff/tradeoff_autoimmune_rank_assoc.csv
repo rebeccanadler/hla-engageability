@@ -1,0 +1,6 @@
+feature,rho_raw,p_raw,rho_+freq,p_+freq,rho_+HED,p_+HED,rho_+freq+HED,p_+freq+HED
+engageability_A (composite),0.212,0.384,0.126,0.618,0.208,0.409,0.123,0.639
+z_het (VARIABLE),0.168,0.491,0.111,0.661,0.204,0.416,0.138,0.598
+z_absnetchg (VARIABLE),-0.022,0.928,0.044,0.863,-0.032,0.899,0.038,0.886
+z_hydimb (VARIABLE),-0.356,0.135,-0.303,0.222,-0.36,0.142,-0.31,0.226
+con_heterogeneity (CONSERVED),0.269,0.265,0.388,0.111,0.265,0.288,0.388,0.123

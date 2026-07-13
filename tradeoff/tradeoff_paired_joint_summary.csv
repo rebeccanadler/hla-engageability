@@ -1,0 +1,7 @@
+test,method,rho,p,n_alleles,n_supertypes
+cancer logHR vs autoimmune risk_rank (15 alleles),spearman,0.037,0.896,15,8
+cancer logHR vs autoimmune risk_rank (8 supertype pts),spearman,0.374,0.362,8,8
+engageability vs cancer logHR (15 paired),spearman,-0.4,0.139,15,8
+engageability vs autoimmune rank (15 paired),spearman,0.169,0.546,15,8
+engageability vs cancer logHR +freq (15 paired),partial-spearman,-0.38,0.18,15,8
+engageability vs autoimmune rank +freq (15 paired),partial-spearman,0.077,0.792,15,8

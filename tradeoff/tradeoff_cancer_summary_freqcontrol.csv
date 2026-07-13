@@ -1,0 +1,7 @@
+spec,beta,se,p_norm/p_wls,p_t,df_t,ci_lo,ci_hi,n_rows,n_clusters
+allele-clustered raw,0.1014,0.0619,0.101,0.132,10,-0.037,0.239,400,12
+allele-clustered +freq,0.0967,0.0493,0.05,0.081,9,-0.015,0.208,400,12
+allele-clustered +HED,0.0826,0.049,0.092,0.126,9,-0.028,0.193,400,12
+allele-clustered +freq+HED,0.0746,0.041,0.069,0.107,8,-0.02,0.169,400,12
+supertype-IVW raw,0.2716,0.2273,0.26,0.26,10,,,12,12
+supertype-IVW +freq,0.2561,0.2404,0.315,0.315,9,,,12,12

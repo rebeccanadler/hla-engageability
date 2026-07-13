@@ -1,0 +1,114 @@
+[
+ {
+  "allele": "A*02:01",
+  "locus": "A",
+  "n_pops": 97,
+  "freq_median": 0.112,
+  "freq_max": 0.4,
+  "freq_p90": 0.2642
+ },
+ {
+  "allele": "A*03:01",
+  "locus": "A",
+  "n_pops": 98,
+  "freq_median": 0.08055,
+  "freq_max": 0.25,
+  "freq_p90": 0.14363
+ },
+ {
+  "allele": "B*15:01",
+  "locus": "B",
+  "n_pops": 93,
+  "freq_median": 0.0298,
+  "freq_max": 0.4007,
+  "freq_p90": 0.0678
+ },
+ {
+  "allele": "A*11:01",
+  "locus": "A",
+  "n_pops": 97,
+  "freq_median": 0.08,
+  "freq_max": 0.613,
+  "freq_p90": 0.30428
+ },
+ {
+  "allele": "A*01:01",
+  "locus": "A",
+  "n_pops": 93,
+  "freq_median": 0.079,
+  "freq_max": 0.333,
+  "freq_p90": 0.15402
+ },
+ {
+  "allele": "A*23:01",
+  "locus": "A",
+  "n_pops": 91,
+  "freq_median": 0.0212,
+  "freq_max": 0.211,
+  "freq_p90": 0.135
+ },
+ {
+  "allele": "A*02:07",
+  "locus": "A",
+  "n_pops": 74,
+  "freq_median": 0.0235,
+  "freq_max": 0.227,
+  "freq_p90": 0.131
+ },
+ {
+  "allele": "B*13:01",
+  "locus": "B",
+  "n_pops": 88,
+  "freq_median": 0.01985,
+  "freq_max": 0.27,
+  "freq_p90": 0.1271
+ },
+ {
+  "allele": "B*46:01",
+  "locus": "B",
+  "n_pops": 81,
+  "freq_median": 0.0474,
+  "freq_max": 0.254,
+  "freq_p90": 0.163
+ },
+ {
+  "allele": "B*55:02",
+  "locus": "B",
+  "n_pops": 71,
+  "freq_median": 0.018,
+  "freq_max": 0.359,
+  "freq_p90": 0.095
+ },
+ {
+  "allele": "C*01:02",
+  "locus": "C",
+  "n_pops": 97,
+  "freq_median": 0.0408,
+  "freq_max": 0.5096,
+  "freq_p90": 0.2156
+ },
+ {
+  "allele": "C*04:01",
+  "locus": "C",
+  "n_pops": 97,
+  "freq_median": 0.1155,
+  "freq_max": 0.286,
+  "freq_p90": 0.19112
+ },
+ {
+  "allele": "C*08:01",
+  "locus": "C",
+  "n_pops": 88,
+  "freq_median": 0.0282,
+  "freq_max": 0.366,
+  "freq_p90": 0.1493
+ },
+ {
+  "allele": "B*54:01",
+  "locus": "B",
+  "n_pops": 78,
+  "freq_median": 0.01,
+  "freq_max": 0.088,
+  "freq_p90": 0.038
+ }
+]

@@ -1,0 +1,5 @@
+check,predicts,observed,verdict
+1. Reference-mapping bias (cross-locus divergence regression),"All loci: divergent→lost (strong +ρ), reference allele retained","A: ρ=−0.51(p<.01), refA LOST; C: ρ=−0.07(ns); B: ρ=+0.23(p=.10). Universal prediction fails at 2/3 loci; weak at B.",NOT supported as general mechanism
+2. Bradley–Terry (paired partner-composition),Marginal hits vanish once partner composition modeled jointly,"B*58:01 rank 2/53 most-lost; B*07:02, B*08:01 rank 49–50/53 most-retained — all survive",Hits ROBUST to partner composition
+3. Segmental haplotype loss (partner C*03:02),"If loss is segmental, B*58:01's haplotype partner C*03:02 co-shows loss bias",C*03:02 frac_lost=0.505 (p=1.0) — NO loss bias,"B*58:01 loss is B-specific, NOT segmental"
+4. Positive control B*57:01 (sister allele),Strong-CD8 sister allele trends same (LOST) direction,"B*57:01 frac_lost=0.534 (mild, ns) — same direction as B*58:01",Consistent with immune-pressure interpretation
