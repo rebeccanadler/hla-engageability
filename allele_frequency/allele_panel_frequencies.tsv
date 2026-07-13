@@ -1,0 +1,711 @@
+# allele_panel_frequencies.tsv
+# Full annotated per-allele frequency table for the capacity-panel floor pre-step. Stays in Claude Science.
+# THIS IS A COUNTS/FREQUENCIES PRE-STEP. No capacity/engageability/HED values are present or used here.
+#
+# CATALOG SOURCE (exported, not re-derived):
+#   engageability_scores.csv  vid 5f19dea6-f51d-4aa4-bd9e-0c4fe3d4e62c
+#   hed_per_allele.csv        vid c6390124-6e26-4efa-a732-6a36ebb349b4
+#   Membership IDENTICAL between the two tables (676==676, symmetric difference empty).
+#   IMGT/HLA release the saved tables were built from: 3.64.0 (alignments fetched 2026-04-16).
+#   N total = 676 (A=218, B=331, C=127).
+#
+# FREQUENCY SOURCE (fetched, not remembered):
+#   Allele Frequency Net Database (allelefrequencies.net); dataset = Gragert et al. 2013,
+#   Human Immunology 74:1313-1320 (US NMDP / Be The Match registry; EM-estimated, IMGT/HLA 3.4.0).
+#   AFND access date: 2026-07-09. 21 detailed NMDP subgroups fetched (pop_ids 3201-3223; 3203 & 3221 not NMDP).
+#   CAVEAT: Gragert frequencies are EM-estimated from registry typing, much of it low/intermediate
+#   resolution imputed to high resolution; 2-field frequencies for rare alleles carry more uncertainty
+#   than their point estimates imply.
+#
+# FLOOR DEFINITION: floor_freq_max_across_21_subgroups = MAX allele frequency across all 21 detailed
+#   NMDP subgroups (never pooled, never sample-size-weighted). Broad 5-group frequencies are NOT used
+#   for the floor; they appear only in the chromosome-coverage report (quantity 4).
+#
+# COLLAPSES: AFND reports these NMDP data at 2-field resolution already; NO 4-field->2-field summing
+#   was required. No catalog collapse was required.
+#
+# VERIFICATION column: 'matched_2field_direct' = allele has >=1 AFND row (see n_subgroups_observed);
+#   'ABSENT_no_afnd_row' = allele has NO AFND row in any subgroup -> SEPARATE STRATUM, never dropped by a floor.
+#   All 20 absent alleles classified GENUINELY ABSENT (2-field name existed at IMGT 3.4.0 but unobserved in
+#   the NMDP panel); verified against IMGT/HLA Allelelist_history.txt + Deleted_alleles.txt (3.4.0 vs 3.64.0).
+#   Empty per-subgroup freq cell = allele not listed in that subgroup (absent-in-panel), distinct from an observed 0.0.
+#
+# floor_<f> columns: 'retained' (max>=f) / 'below_floor' (matched, max<f) / 'unmatched_separate' (kept aside).
+#
+catalog_allele	locus	verification	floor_freq_max_across_21_subgroups	supertype	supertype_map_status	engageability_profile_id	freq_3201_African_American_pop_2	freq_3202_African	freq_3204_American_Indian_South_or_Central_America	freq_3205_Alaska_Native_or_Aleut	freq_3206_North_American_Amerindian	freq_3207_Caribean_Black	freq_3208_Caribean_Hispanic	freq_3209_Caribean_Indian	freq_3210_European_Caucasian	freq_3211_Filipino	freq_3212_Hawaiian_or_other_Pacific_Islander	freq_3213_Japanese	freq_3214_Korean	freq_3215_Middle_Eastern_or_North_Coast_of_Africa	freq_3216_Mexican_or_Chicano	freq_3217_Chinese	freq_3218_Hispanic_South_or_Central_American	freq_3219_Black_South_or_Central_American	freq_3220_Vietnamese	freq_3222_Southeast_Asian	freq_3223_South_Asian_Indian	absent_classification	absent_evidence	n_subgroups_observed	floor_0.0005	floor_0.001	floor_0.005	floor_0.01	floor_0.02	floor_0.05
+A*01:01	A	matched_2field_direct	0.1646	A01	mapped	44	0.0467	0.0506	0.119	0.105	0.1202	0.0449	0.0666	0.063	0.1646	0.0125	0.0447	0.01	0.0208	0.135	0.0735	0.0145	0.0726		0.0332	0.1147	0.1545			20	retained	retained	retained	retained	retained	retained
+A*01:02	A	matched_2field_direct	0.0042	Unclassified	Unclassified	44	0.0042	0.0031			0.0002	0.0033	0.0021	0.002	0.0001	3e-05	0.0001			0.0003	0.0012		0.0014			2e-05	5e-06			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*01:03	A	matched_2field_direct	0.0025	A01	mapped	44	5.8e-05	0.0025			3e-05	6e-05	6.1e-05		0.0001	0.0002	4.3e-05			0.0011	8.2e-05	7e-05	9.2e-05		0.0003	0.0001	8.4e-05			15	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*01:06	A	matched_2field_direct	9.2e-05	A01	mapped	42	2e-06	4e-05			4e-05		4e-06		2.25e-05		4.3e-05		6e-06	9.2e-05	1.1e-05		3e-06							10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*01:09	A	matched_2field_direct	0.0001	A01	mapped	44	2e-06	0.0001																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*01:12	A	matched_2field_direct	4.9e-05	A01	mapped	47	1e-06																			1e-05	4.9e-05			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*01:17	A	matched_2field_direct	4e-06		no_scheme_match	55	1e-06						4e-06		2.8e-06						2e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*01:25	A	matched_2field_direct	2.1e-05		no_scheme_match	44	2e-06				1e-05				9.3e-06					2.1e-05	2e-06		3e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:01	A	matched_2field_direct	0.2776	A02	mapped	26	0.1235	0.1146	0.265	0.192	0.2776	0.1107	0.1688	0.145	0.2755	0.0671	0.1198	0.148	0.1857	0.1973	0.223	0.0946	0.2095		0.0349	0.0578	0.0492			20	retained	retained	retained	retained	retained	retained
+A*02:02	A	matched_2field_direct	0.0466	A02	mapped	26	0.0414	0.0466	0.003	0.002	0.0014	0.0415	0.0184	0.022	0.0009	0.0002	0.0013	4e-05	9e-06	0.006	0.0041	0.0001	0.0076		0.0003	0.0003	0.0002			20	retained	retained	retained	retained	retained	below_floor
+A*02:03	A	matched_2field_direct	0.0925	A02	mapped	23	0.0002	0.0002	0.001		3e-05	0.0003	0.0001	0.002	1.93e-05	0.0149	0.0064	0.0014	0.0063	0.0002	0.0001	0.0774	0.0002		0.0925	0.0321	0.011			19	retained	retained	retained	retained	retained	retained
+A*02:04	A	matched_2field_direct	0.0089	A02	mapped	26	3.6e-05	0.0003			6e-05	0.0006	0.0089	0.008	1.25e-05				4e-06	2.1e-05	0.0003		0.0016		1e-06					12	retained	retained	retained	below_floor	below_floor	below_floor
+A*02:05	A	matched_2field_direct	0.0223	A02	mapped	26	0.0149	0.0207	0.009	0.005	0.0072	0.0167	0.0223	0.022	0.0097	0.0011	0.0032	0.0006	0.0008	0.0212	0.0142	0.0014	0.0148		0.0009	0.0086	0.01			20	retained	retained	retained	retained	retained	below_floor
+A*02:06	A	matched_2field_direct	0.103	A02	mapped	26	0.0007	0.0003	0.02	0.103	0.0275	0.0003	0.0024	0.004	0.0018	0.0278	0.0847	0.0748	0.0747	0.002	0.0504	0.0349	0.0198		0.0406	0.0189	0.0175			20	retained	retained	retained	retained	retained	retained
+A*02:07	A	matched_2field_direct	0.0948	A02	mapped	26	1.7e-05			0.001	3e-05	0.0001	2.6e-05		3.92e-05	0.0174	0.0083	0.02	0.0279	0.0001	2.3e-05	0.0948	5.5e-05		0.08	0.022	0.0006			17	retained	retained	retained	retained	retained	retained
+A*02:08	A	matched_2field_direct	0.0002	Unclassified	Unclassified	29	1e-06								1.21e-05				6e-06	0.0001		5e-06	7e-06			0.0001	0.0002			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:09	A	ABSENT_no_afnd_row		A02	mapped	26																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*02:09	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*02:10	A	matched_2field_direct	0.0025	Unclassified	Unclassified	26										0.0002	0.0002		0.0025			0.0011			0.0001	0.0001	2.6e-05			7	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*02:11	A	matched_2field_direct	0.05	A02	mapped	17	0.0002	0.0001	0.003		0.0003	0.0019	0.0059	0.011	5.15e-05	0.0008	0.003		0.0002	0.0012	0.0007	0.0002	0.0081		0.0011	0.0336	0.05			18	retained	retained	retained	retained	retained	retained
+A*02:12	A	matched_2field_direct	0.0002	A02	mapped	26							2e-06		3.2e-06		0.0002			7e-06	2e-06		2e-05				3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:122	A	matched_2field_direct	2e-05		no_scheme_match	26	1.1e-05	2e-05					1.7e-05		4e-07								7e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:123	A	matched_2field_direct	1.09e-05		no_scheme_match	26					1e-05				1.09e-05															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:13	A	matched_2field_direct	0.0009	A02	mapped	23	4e-06				1e-05	2e-05	8.9e-05		1.53e-05		4.3e-05			7e-06	4.2e-05		0.0009							9	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:131	A	ABSENT_no_afnd_row			no_scheme_match	24																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*02:131	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*02:137	A	matched_2field_direct	1e-05		no_scheme_match	26															1e-05									1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:14	A	matched_2field_direct	0.0003	A02	mapped	26	6e-05	0.0003					9e-06		1.6e-06					7e-06	4e-06		3e-06							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:16	A	matched_2field_direct	0.003	A02	mapped	24	2.6e-05									0.0002	0.0003		1.9e-05		1e-06		0.0		0.0001	0.0018	0.003			9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*02:17	A	matched_2field_direct	0.011	A02	mapped	26	0.0002	4e-05			0.0003	0.0002	0.0098	0.011	0.0004	6.9e-05	0.0001		4e-06	0.0022	0.0005	1e-05	0.0019		2.3e-05	0.0001	2.4e-05			17	retained	retained	retained	retained	below_floor	below_floor
+A*02:18	A	ABSENT_no_afnd_row		A02	mapped	26																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*02:18	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*02:19	A	matched_2field_direct	7e-06	A02	mapped	25	1e-06								2.8e-06								7e-06							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:20	A	matched_2field_direct	0.0027	A02	mapped	29	2.4e-05	4e-05			6e-05	3e-05	0.0027	0.002	0.0001	7.1e-05	0.0001	9e-05	3e-05	0.0002	0.0002	2.9e-05	0.0003		5.8e-05	0.0009	0.0011			18	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*02:21	A	matched_2field_direct	2.8e-06	A02	mapped	26									2.8e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:22	A	matched_2field_direct	0.0845	A02	mapped	26	7.9e-05	0.0008			8e-05	0.0002	0.0014	0.001	6.4e-05		8.7e-05		2.1e-05	0.0002	0.0002	3e-05	0.0056	0.0845		4e-05	1.3e-05			16	retained	retained	retained	retained	retained	retained
+A*02:24	A	matched_2field_direct	7.4e-05	A02	mapped	26	6e-06				1e-05				7.4e-05					1.4e-05	1.9e-05		7e-06				3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:27	A	matched_2field_direct	1.85e-05	A02	mapped	21					1e-05				1.85e-05		5e-06													3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:29	A	matched_2field_direct	1.05e-05	Unclassified	Unclassified	32									1.05e-05							1e-06								2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:30	A	matched_2field_direct	3.42e-05	A02	mapped	26	2e-06						4e-06		3.42e-05					7e-06	4e-06		7e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:33	A	matched_2field_direct	3.8e-05	Unclassified	Unclassified	26							1.7e-05		1.2e-06						3.8e-05		2e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:34	A	matched_2field_direct	1.05e-05	Unclassified	Unclassified	27									1.05e-05					7e-06	2e-06	2e-06								4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:35	A	matched_2field_direct	3.42e-05	Unclassified	Unclassified	27	6e-06				3e-05		4e-06		3.42e-05	1e-05				7e-06	6e-06	2e-06			1.1e-05		3e-05			10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:36	A	matched_2field_direct	4.5e-05	A02	mapped	25	1e-06								4e-06				4.5e-05			3e-06	3e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:38	A	matched_2field_direct	1.97e-05	A02	mapped	22	4e-06								1.97e-05					1.4e-05	6e-06	5e-06								5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:39	A	matched_2field_direct	5.5e-05	A02	mapped	26																	5.5e-05							1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:44	A	matched_2field_direct	0.0001	A02	mapped	26					4e-05		9e-06		8e-07						0.0001		2.4e-05							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:45	A	matched_2field_direct	3e-06	A02	mapped	38	2e-06								2e-06							3e-06								3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:49	A	matched_2field_direct	2.8e-05	A02	mapped	26							2e-06		6e-06					2.8e-05	2e-06					2e-05				5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:58	A	matched_2field_direct	1.9e-05	A02	mapped	26													4e-06		1.9e-05		1.4e-05		0.0					4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:60	A	matched_2field_direct	0.0011	A02	mapped	26	0.0005	0.0011					3.5e-05		1.2e-06	1e-06					1.9e-05		1.7e-05	0.0007						8	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*02:63	A	matched_2field_direct	2e-05	A02	mapped	26	1e-05	2e-05					2e-06		2e-07								3e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:64	A	matched_2field_direct	7e-05	Unclassified	Unclassified	26							4e-06		5.6e-06	1e-06				7e-06	4e-06	5e-06	5.1e-05		4.6e-05	7e-05				9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:74	A	matched_2field_direct	6e-06	A02	mapped	26	5e-06								8e-07				6e-06				3e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:84	A	matched_2field_direct	7e-05	A02	mapped	26	1.8e-05	2e-05			7e-05												2e-06				1e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:85	A	matched_2field_direct	0.0002	A02	mapped	26		4e-05							4.4e-06					0.0002										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:86	A	matched_2field_direct	2e-05	A02	mapped	26	1.4e-05	2e-05							5.2e-06				1.9e-05	1.4e-05	2e-06									6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:87	A	matched_2field_direct	9.2e-05		no_scheme_match	20							4e-06		4e-07								9.2e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:93	A	matched_2field_direct	2.8e-05		no_scheme_match	26									8e-07					2.8e-05		5e-06								3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*02:96	A	matched_2field_direct	7.6e-06		no_scheme_match	26									7.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:01	A	matched_2field_direct	0.1399	A03	mapped	59	0.0839	0.0783	0.106	0.077	0.1044	0.0783	0.0863	0.081	0.1399	0.0131	0.0323	0.009	0.0191	0.101	0.0815	0.014	0.0738		0.0097	0.0499	0.0636			20	retained	retained	retained	retained	retained	retained
+A*03:02	A	matched_2field_direct	0.0175	A03	mapped	60	0.0004	0.0016	0.001		0.0015	0.0004	0.0012	0.002	0.0024	0.0004	0.0017	0.001	0.0026	0.0175	0.0016	0.0006	0.0025		0.002	0.008	0.0086			19	retained	retained	retained	retained	below_floor	below_floor
+A*03:05	A	matched_2field_direct	7.1e-05	A03	mapped	59	1.3e-05	4e-05			6e-05		2.6e-05		4.43e-05					7.1e-05	3.3e-05		2.7e-05				1.3e-05			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:06	A	matched_2field_direct	1e-06	A03	mapped	59	1e-06								8e-07						1e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:07	A	matched_2field_direct	7.4e-05	A03	mapped	60	1.7e-05	4e-05					7.4e-05		2.13e-05						4e-06		1.7e-05				3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:08	A	matched_2field_direct	2e-05	A03	mapped	53	2e-06	2e-05					9e-06		1.81e-05					1.4e-05	4e-06									6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:09	A	matched_2field_direct	1e-05	A03	mapped	59					1e-05				4e-07						4e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:108	A	matched_2field_direct	7e-06		no_scheme_match	53														7e-06										1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:17	A	matched_2field_direct	1.2e-06	A03	mapped	59									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:22	A	matched_2field_direct	1.2e-06		no_scheme_match	59									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*03:26	A	ABSENT_no_afnd_row			no_scheme_match	59																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*03:26	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*11:01	A	matched_2field_direct	0.2752	A03	mapped	56	0.0142	0.0112	0.051	0.036	0.0488	0.0156	0.0412	0.044	0.0609	0.1792	0.1357	0.0874	0.1021	0.0641	0.0484	0.2752	0.0456		0.2466	0.1753	0.1396			20	retained	retained	retained	retained	retained	retained
+A*11:02	A	matched_2field_direct	0.0263	A03	mapped	56	5e-06						1.5e-05		5.6e-06	0.0072	0.0013		0.0014	2.1e-05	8e-06	0.0263	1.4e-05		0.0244	0.006	0.0001			13	retained	retained	retained	retained	retained	below_floor
+A*11:03	A	matched_2field_direct	0.001	A03	mapped	61	8e-06	2e-05			1e-05	0.0001	4e-06	0.001		8.9e-05	8.7e-05		1.3e-05	7e-06	2e-06	6.5e-05	7e-06		0.0001	0.0004	0.0004			16	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*11:04	A	matched_2field_direct	0.0023	A03	mapped	57	1e-06				3e-05				3.2e-06	0.0003	4.3e-05	2e-05			2e-06	4.5e-05	3e-06		0.0023	0.0003	5e-06			12	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*11:05	A	matched_2field_direct	4.3e-05	A03	mapped	56		2e-05					4e-06		4.3e-05					2.1e-05	6e-06		1e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:08	A	matched_2field_direct	6.9e-05	A03	mapped	58							6.9e-05		3.2e-06				1e-06	1.1e-05	2.7e-05	2e-06	4.8e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:09	A	matched_2field_direct	1.21e-05	A03	mapped	56									1.21e-05					7e-06	6e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:10	A	ABSENT_no_afnd_row		A03	mapped	144																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*11:10	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*11:12	A	matched_2field_direct	1e-05	A03	mapped	56							4e-06		8e-06	1e-05				7e-06	2e-06	1e-05	7e-06				3e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:19	A	matched_2field_direct	5.1e-05	Unclassified	Unclassified	52									2e-07	3e-06						5e-06				2e-05	5.1e-05			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:29	A	matched_2field_direct	2e-06		no_scheme_match	56									1.2e-06						2e-06									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*11:30	A	matched_2field_direct	1.6e-06		no_scheme_match	56									1.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:01	A	matched_2field_direct	0.1099	A24	mapped	8	0.1099	0.1047	0.024	0.012	0.0181	0.1068	0.054	0.058	0.0197	0.0031	0.0063	0.0011	0.0003	0.0297	0.0264	0.0021	0.0368		0.0007	0.0061	0.0066			20	retained	retained	retained	retained	retained	retained
+A*23:03	A	matched_2field_direct	2e-05	A24	mapped	8	2e-06	2e-05																	6e-06					3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:04	A	matched_2field_direct	4e-05	A24	mapped	9	1.3e-05	4e-05					1.3e-05		8e-07						2e-06									5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:05	A	matched_2field_direct	8.2e-05	A24	mapped	8	2.4e-05	5e-05					8.2e-05		1.2e-06						3.4e-05		6.5e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:06	A	matched_2field_direct	4e-05	A24	mapped	8	1.4e-05	4e-05																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:13	A	matched_2field_direct	2.1e-05		no_scheme_match	11	1e-06								2.4e-06					2.1e-05			3e-06				3e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:15	A	matched_2field_direct	7e-05		no_scheme_match	8	4.9e-05	7e-05												7e-06			3e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*23:17	A	ABSENT_no_afnd_row			no_scheme_match	8																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*23:17	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*24:02	A	matched_2field_direct	0.353	A24	mapped	3	0.0245	0.022	0.112	0.229	0.1292	0.0251	0.0938	0.095	0.0846	0.2399	0.2393	0.353	0.2211	0.1174	0.1304	0.1519	0.1316		0.1109	0.138	0.1362			20	retained	retained	retained	retained	retained	retained
+A*24:03	A	matched_2field_direct	0.0198	A24	mapped	5	0.0004	0.0006	0.004	0.003	0.0048	0.0006	0.0052	0.005	0.0019	0.0198	0.0103	0.0001	0.0004	0.0089	0.0017	0.0014	0.0049		0.0098	0.0057	0.006			20	retained	retained	retained	retained	below_floor	below_floor
+A*24:04	A	matched_2field_direct	0.0001	Unclassified	Unclassified	0							9e-06			5.7e-05			4.5e-05			0.0001			1.1e-05		3.8e-05			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:05	A	matched_2field_direct	0.001	A24	mapped	3	6e-06	1e-05			1e-05		0.0009	0.001	6e-06	2e-05	4.3e-05			3.5e-05	6.5e-05		9.4e-05		5.7e-05	2e-05				13	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*24:06	A	matched_2field_direct	1e-05	A24	mapped	3	4e-06								8e-07						1e-05									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:07	A	matched_2field_direct	0.1347	Unclassified	Unclassified	10	0.0005	0.0003			0.0001	0.0006	0.0001	0.001	6.9e-05	0.1347	0.0567	0.0007	8e-05	0.0004	0.0004	0.0045	0.0003		0.0305	0.0224	0.0112			18	retained	retained	retained	retained	retained	retained
+A*24:08	A	matched_2field_direct	0.0007	A24	mapped	19	2e-06				3e-05		2e-06		8e-07	4.1e-05		0.0003	0.0007	2.1e-05	9e-06	0.0003	7e-06		4.6e-05		1.7e-05			13	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:10	A	matched_2field_direct	0.009	A24	mapped	2	1e-06						4e-06		4e-07	0.0081	0.0011		7.8e-05		4e-06	0.0018			0.009	0.0045	0.0001			11	retained	retained	retained	below_floor	below_floor	below_floor
+A*24:13	A	matched_2field_direct	5.1e-05	A24	mapped	3	1.1e-05						9e-06						6e-06		2.1e-05		1e-05			2e-05	5.1e-05			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:14	A	matched_2field_direct	0.0003	Unclassified	Unclassified	3							4.3e-05		1.2e-06					7e-06	2.1e-05		0.0003							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:17	A	matched_2field_direct	0.0087	A24	mapped	3	1e-05								8e-07	0.0002	0.0002		3.9e-05	4.9e-05		3.3e-05	1e-05		3.5e-05	0.0051	0.0087			11	retained	retained	retained	below_floor	below_floor	below_floor
+A*24:20	A	matched_2field_direct	0.0014	A24	mapped	3	4e-06						1e-06		4e-07	0.0004	0.0003		0.0006			0.0014			0.001	0.0002	4.3e-05			10	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*24:22	A	matched_2field_direct	0.0007	A24	mapped	6	1e-06						1.6e-05								0.0007		0.0002							4	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:23	A	matched_2field_direct	0.0012	A24	mapped	4	7.1e-05	4e-05		0.001	0.0012	3e-05	4e-06		1.77e-05						1.7e-05		1e-05							9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*24:25	A	matched_2field_direct	0.0017	A24	mapped	3					7e-05		0.0004		6e-06	4e-06	1.1e-05	0.0001		1.4e-05	0.0017		0.001							9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*24:26	A	matched_2field_direct	7.7e-05	A24	mapped	3							6.1e-05		1.6e-06					2.8e-05	3.6e-05		7.7e-05							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:29	A	matched_2field_direct	1.4e-05	A24	mapped	12	1e-06								9.7e-06					1.4e-05										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:30	A	matched_2field_direct	5e-05	A24	mapped	3									1.6e-06				6e-06	4e-06		1.5e-05	7e-06		2.3e-05	5e-05	3e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:31	A	matched_2field_direct	1e-05	Unclassified	Unclassified	16					1e-05				4.4e-06					7e-06							3e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:32	A	matched_2field_direct	2.09e-05	Unclassified	Unclassified	3							4e-06		2.09e-05	2e-05														3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:33	A	ABSENT_no_afnd_row		A24	mapped	5																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as A*24:33	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+A*24:35	A	matched_2field_direct	4e-06	A24	mapped	3									2e-06					4e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:37	A	matched_2field_direct	0.0001	A24	mapped	3										0.0001				4e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:47	A	matched_2field_direct	4e-06	A24	mapped	3									2.4e-06					4e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:53	A	matched_2field_direct	0.0002	Unclassified	Unclassified	3	1e-06						1.3e-05		1.2e-06	5e-06					8e-06		0.0002				1e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:56	A	matched_2field_direct	7e-06		no_scheme_match	1									8e-07					7e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:57	A	matched_2field_direct	2.4e-06		no_scheme_match	3									2.4e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:58	A	matched_2field_direct	4.4e-06		no_scheme_match	3									4.4e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:72	A	matched_2field_direct	3e-06		no_scheme_match	3									4e-07								3e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:81	A	matched_2field_direct	9.3e-06		no_scheme_match	3									9.3e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*24:95	A	matched_2field_direct	1.3e-05		no_scheme_match	3									4e-07					7e-06	1.3e-05		7e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*25:01	A	matched_2field_direct	0.021	A01	mapped	138	0.0034	0.0023	0.014	0.007	0.0148	0.0028	0.0073	0.005	0.021	0.0012	0.002	0.0007	0.0001	0.0097	0.0113	0.0002	0.0101		0.0002	0.0003	0.0001			20	retained	retained	retained	retained	retained	below_floor
+A*25:02	A	matched_2field_direct	0.0001	A01	mapped	143	1e-05				6e-05				3.34e-05	0.0001		2e-05		4e-06			2e-06							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:01	A	matched_2field_direct	0.0798	A01	mapped	134	0.0146	0.0124	0.024	0.021	0.0199	0.0123	0.03	0.027	0.0309	0.0152	0.0438	0.0798	0.0375	0.0442	0.0259	0.0237	0.0295		0.0228	0.0387	0.0418			20	retained	retained	retained	retained	retained	retained
+A*26:02	A	matched_2field_direct	0.0196	A01	mapped	134	5e-06						4e-06		6.8e-06	2.3e-05	0.0003		0.0196		1.7e-05	0.0001	2.4e-05		2.3e-05	1e-05	2.5e-05			12	retained	retained	retained	retained	below_floor	below_floor
+A*26:03	A	matched_2field_direct	0.0233	A01	mapped	140	1e-05	2e-05			1e-05				3.6e-06	9.4e-05	0.0002	0.0233	0.0076	1.4e-05	9e-06	0.0001	3.4e-05		2.3e-05	5e-05	1.4e-05			15	retained	retained	retained	retained	retained	below_floor
+A*26:07	A	matched_2field_direct	0.0002	A01	mapped	18	6e-06	4e-05			3e-05		1.3e-05		8.4e-06					7e-06	1.7e-05		2.7e-05			7e-05	0.0002			10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:08	A	matched_2field_direct	0.001	A01	mapped	134	0.0001	0.0002			0.0009	0.0002	0.0008	0.001	0.001	4.9e-05	4.3e-05		3e-06	0.0006	0.0009	3e-06	0.0009		1.1e-05					15	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*26:09	A	matched_2field_direct	6e-05	A01	mapped	135	5e-06				6e-05				1.61e-05						4e-06						3e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:12	A	matched_2field_direct	0.0002	A01	mapped	136	0.0001	0.0002					9e-06		4e-07					7e-06			3e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:13	A	matched_2field_direct	4e-06	A01	mapped	142	1e-06								2.4e-06						4e-06		3e-06				1e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:14	A	matched_2field_direct	2e-05	A01	mapped	134									2.4e-06					1.4e-05	2e-06	5e-06	3e-06			2e-05	1.9e-05			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:15	A	matched_2field_direct	7e-06	A01	mapped	134									4.4e-06					7e-06	2e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:16	A	matched_2field_direct	0.0001	Unclassified	Unclassified	134									2e-07		4.3e-05			2.1e-05			2e-06	0.0001		1e-05				6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:17	A	matched_2field_direct	4.9e-05	A01	mapped	134		2e-05					1e-06		4.4e-06					4.9e-05	8e-06		7e-06			2e-05	1.1e-05			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:18	A	matched_2field_direct	0.0002	A01	mapped	137										1e-05			0.0002			1.5e-05					5e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:20	A	matched_2field_direct	7.1e-05	Unclassified	Unclassified	134							4e-06		1.6e-06				7.1e-05			4.5e-05								4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*26:31	A	matched_2field_direct	1.6e-06		no_scheme_match	36	1e-06								1.6e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*29:01	A	matched_2field_direct	0.0753	A01A24	mapped	35	0.0003	0.0016	0.002	0.002	0.0017	0.0008	0.0009	0.001	0.0027	0.0008	0.0015	0.0003	0.0064	0.0119	0.002	0.0076	0.0021		0.0753	0.0115	0.0132			20	retained	retained	retained	retained	retained	retained
+A*29:02	A	matched_2field_direct	0.0607	A01A24	mapped	35	0.0318	0.0303	0.031	0.02	0.0274	0.0293	0.0607	0.056	0.0353	0.0029	0.0107	0.0018	0.0007	0.0193	0.039	0.001	0.0441		0.005	0.0022	0.0013			20	retained	retained	retained	retained	retained	retained
+A*29:04	A	matched_2field_direct	1.1e-05	Unclassified	Unclassified	33									4e-06								2e-06		1.1e-05					3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*29:09	A	matched_2field_direct	4e-06	A01A24	mapped	35	4e-06						4e-06		3.6e-06												3e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*29:10	A	matched_2field_direct	0.0001	A01A24	mapped	35							4e-06		1.21e-05					0.0001	2e-06						5e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*29:12	A	matched_2field_direct	3e-05	A01A24	mapped	35					3e-05				2.4e-06					7e-06	2e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:01	A	matched_2field_direct	0.072	A01A03	mapped	62	0.0685	0.0685	0.014	0.009	0.0109	0.072	0.0294	0.03	0.013	0.0045	0.0029	0.0019	0.0317	0.0283	0.0162	0.0274	0.0199		0.0139	0.0169	0.0173			20	retained	retained	retained	retained	retained	retained
+A*30:02	A	matched_2field_direct	0.0694	A01	mapped	50	0.0667	0.0654	0.016	0.006	0.0116	0.0694	0.0317	0.031	0.009	0.0014	0.0047	0.0006	0.0001	0.0133	0.023	0.0003	0.0273		0.0002	0.0023	0.0024			20	retained	retained	retained	retained	retained	retained
+A*30:03	A	matched_2field_direct	2e-06	A01	mapped	50	1e-06								2e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:04	A	matched_2field_direct	0.0124	A01	mapped	49	0.0022	0.0051	0.001		0.0011	0.0022	0.0067	0.008	0.0015	6.3e-05	0.0004	0.0003	0.0124	0.0089	0.0024	0.0002	0.0025		5.7e-05	0.0003	0.0002			19	retained	retained	retained	retained	below_floor	below_floor
+A*30:07	A	matched_2field_direct	0.0004	Unclassified	Unclassified	7	0.0002	0.0004			1e-05	0.0002	9e-06		8e-07						2e-06									7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:08	A	matched_2field_direct	5e-05	A01A03	mapped	62	2.3e-05	5e-05					9e-06						6e-06	2.1e-05	4e-06						5e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:09	A	matched_2field_direct	0.0001	A01	mapped	51	4.9e-05	0.0001					9e-06		4e-07	1e-05					1.9e-05		1.4e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:10	A	matched_2field_direct	0.0032	Unclassified	Unclassified	50	1.1e-05	0.0003					0.0032	0.002	8.9e-06		4.3e-05			7.4e-05	0.0004		0.0005							9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*30:11	A	matched_2field_direct	3e-05	A01A03	mapped	62	1e-06								8e-07					7e-06						2e-05	3e-05			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:15	A	matched_2field_direct	7e-06	A01A03	mapped	62	4e-06								8e-07					7e-06										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*30:16	A	matched_2field_direct	1.8e-05		no_scheme_match	62	1.8e-05												2e-06											2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:01	A	matched_2field_direct	0.0849	A03	mapped	41	0.01	0.0079	0.054	0.052	0.0737	0.0094	0.0289	0.029	0.027	0.0059	0.0109	0.0849	0.0535	0.0186	0.0531	0.0242	0.0439		0.0137	0.0259	0.0331			20	retained	retained	retained	retained	retained	retained
+A*31:02	A	matched_2field_direct	0.001	Unclassified	Unclassified	37	1e-06	2e-05					4.7e-05		6e-06				6e-06		0.001	5e-06	0.0003				3e-06			9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*31:04	A	matched_2field_direct	0.0008	A03	mapped	41	0.0001	0.0008					9e-06		1.01e-05		2.2e-05		1.9e-05	3.5e-05	9e-06	3e-06	1.7e-05			4e-05	2.7e-05			12	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:06	A	matched_2field_direct	0.0004	A03	mapped	41	2e-06						4e-06		1.2e-06		2.2e-05			2.8e-05		2e-05	3e-06	5.1e-05	6e-06	0.0003	0.0004			11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:08	A	matched_2field_direct	1.01e-05	Unclassified	Unclassified	9									1.01e-05															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:09	A	matched_2field_direct	0.0008	A03	mapped	64					1e-05		2e-06		2e-06					7e-06	5.9e-05		5.1e-05	0.0008						7	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:11	A	matched_2field_direct	0.0005	A03	mapped	41													9.7e-05					0.0005						2	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:12	A	matched_2field_direct	0.0005	A03	mapped	41																			3.4e-05	0.0004	0.0005			3	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:13	A	matched_2field_direct	2.5e-05		no_scheme_match	41																2.5e-05								1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:15	A	matched_2field_direct	9.5e-05		no_scheme_match	63							9e-06								2e-06		9.5e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:16	A	matched_2field_direct	7e-05		no_scheme_match	41										1e-05										7e-05	5.9e-05			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:18	A	matched_2field_direct	2.7e-05		no_scheme_match	40															2.7e-05		7e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*31:20	A	matched_2field_direct	2.4e-06		no_scheme_match	41									2.4e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:01	A	matched_2field_direct	0.0493	A01	mapped	51	0.015	0.0154	0.028	0.025	0.0254	0.0133	0.0337	0.029	0.0355	0.0028	0.011	0.0017	0.0061	0.0493	0.0247	0.0062	0.0261		0.0017	0.0299	0.0386			20	retained	retained	retained	retained	retained	below_floor
+A*32:02	A	matched_2field_direct	1.7e-05	A01	mapped	49							4e-06		2.8e-06					7e-06	1.7e-05		7e-06				3e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:03	A	matched_2field_direct	7.1e-05	A01	mapped	51	7e-06				3e-05		4e-06		1.61e-05				6e-06	7.1e-05	8e-06		7e-06				5e-06			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:04	A	matched_2field_direct	8e-05	A01	mapped	48	1e-06				8e-05	2e-05	9e-06		6.28e-05					2.1e-05	6e-06		3e-06							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:06	A	matched_2field_direct	4e-06	A01	mapped	49	2e-06								2.4e-06						4e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:07	A	matched_2field_direct	1.29e-05	A01	mapped	51	4e-06				1e-05				1.29e-05				6e-06	7e-06	2e-06									6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*32:08	A	matched_2field_direct	6.4e-06	A01	mapped	51	4e-06								6.4e-06				3e-06		4e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*33:01	A	matched_2field_direct	0.0273	A03	mapped	133	0.0206	0.0167	0.01	0.004	0.0066	0.0201	0.0273	0.023	0.0081	0.0015	0.0024	0.0002	0.0001	0.0189	0.0195	0.0005	0.0218		0.0003	0.0018	0.0012			20	retained	retained	retained	retained	retained	below_floor
+A*33:03	A	matched_2field_direct	0.1529	A03	mapped	133	0.0518	0.0523	0.008	0.004	0.0039	0.0567	0.0149	0.029	0.0032	0.0511	0.0238	0.0648	0.1529	0.0109	0.0049	0.1011	0.0082		0.1188	0.0948	0.0992			20	retained	retained	retained	retained	retained	retained
+A*33:05	A	matched_2field_direct	9.86e-05	A03	mapped	133	1.3e-05				1e-05	2e-05	4e-06		9.86e-05					4.2e-05	1.5e-05		2e-05			2e-05				9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*33:09	A	matched_2field_direct	2e-06		no_scheme_match	28									2e-06								2e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*34:01	A	matched_2field_direct	0.1524	Unclassified	Unclassified	132	7.7e-05	3e-05		0.001	0.0002	3e-05	3.9e-05		3.98e-05	0.1524	0.1028	0.0006	1.6e-05	1.4e-05	0.0004	0.0011	0.0002		0.007	0.0058	0.0001			18	retained	retained	retained	retained	retained	retained
+A*34:02	A	matched_2field_direct	0.0356	A03	mapped	147	0.0335	0.0314	0.004	0.002	0.0019	0.0356	0.0084	0.009	0.0009	0.0011	0.001		2e-06	0.0012	0.0025	1.6e-05	0.0046		3.4e-05	0.0002	4e-05			19	retained	retained	retained	retained	retained	below_floor
+A*34:05	A	matched_2field_direct	0.003	Unclassified	Unclassified	132		3e-05		0.001						0.003	0.0005		1.6e-05		6e-06	5.2e-05			4.8e-05	0.0001	1.4e-05			10	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*36:01	A	matched_2field_direct	0.0335	A01	mapped	46	0.0253	0.0295	0.002		0.0009	0.0335	0.004	0.006	0.0001	4.9e-05	0.0002	6e-05	6e-06	0.0002	0.0011	3.5e-05	0.0026		5.7e-05	7e-05	3e-05			19	retained	retained	retained	retained	retained	below_floor
+A*36:02	A	matched_2field_direct	1e-05	A01	mapped	43									1.6e-06					7e-06	2e-06	1e-05								4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*36:03	A	matched_2field_direct	0.0001	A01	mapped	46	7.7e-05	0.0001					2.2e-05							7e-06	2e-06		1.7e-05				3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*36:04	A	matched_2field_direct	1.4e-05	A01	mapped	45									2.8e-06					1.4e-05	2e-06		3e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*43:01	A	matched_2field_direct	0.0002	Unclassified	Unclassified	34	9.7e-05	0.0002			1e-05	8e-05	4e-06		2.4e-06	1e-05				2.1e-05							5e-06			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*66:01	A	matched_2field_direct	0.0156	A03	mapped	146	0.0141	0.0156	0.004	0.003	0.0032	0.0131	0.0097	0.01	0.0041	0.0009	0.0009	0.0001	2.6e-05	0.0061	0.0049	0.0002	0.0064		3.4e-05	0.0006	0.0003			20	retained	retained	retained	retained	below_floor	below_floor
+A*66:02	A	matched_2field_direct	0.0094	A03	mapped	145	0.0089	0.0094			0.0002	0.0094	0.0017	0.002	2.78e-05	0.0002	0.0002		3e-06	4.2e-05	0.0003	3e-06	0.0008		6e-06		1.3e-05			16	retained	retained	retained	below_floor	below_floor	below_floor
+A*66:03	A	matched_2field_direct	0.0024	A03	mapped	139	0.0018	0.0024			4e-05	0.0022	0.0002	0.001	5.6e-06		4.3e-05		3e-06	2.1e-05	0.0001	3e-06	0.0002		6e-06					14	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*66:04	A	matched_2field_direct	2e-05	A03	mapped	146	2e-06	2e-05							4e-07															3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:01	A	matched_2field_direct	0.0676	A03	mapped	148	0.0395	0.0378	0.042	0.064	0.0381	0.0369	0.0385	0.043	0.0319	0.0032	0.0136	0.0017	0.0024	0.03	0.0518	0.004	0.048		0.0057	0.0499	0.0676			20	retained	retained	retained	retained	retained	retained
+A*68:02	A	matched_2field_direct	0.0645	A02	mapped	148	0.0603	0.0645	0.012	0.006	0.0079	0.0636	0.044	0.049	0.0084	0.0009	0.0045	0.0003	7.1e-05	0.0112	0.0185	0.0001	0.0248		0.0004	0.0008	0.0003			20	retained	retained	retained	retained	retained	retained
+A*68:03	A	matched_2field_direct	0.0195	A03	mapped	141	9.8e-05	0.0001	0.006	0.002	0.0016	0.0003	0.0027	0.002	8.97e-05	0.0002	0.0005	1e-05	6e-06	0.0002	0.0195		0.0167		1.1e-05		3e-05			18	retained	retained	retained	retained	below_floor	below_floor
+A*68:05	A	matched_2field_direct	0.0041	A03	mapped	141	1.7e-05	5e-05	0.001		0.0001		0.0003		1.65e-05	4e-05	2.2e-05		7e-06	1.1e-05	0.0041	5e-06	0.0024				3e-06			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*68:06	A	matched_2field_direct	0.0002	A01A03	mapped	148					1e-05				1.2e-06						0.0002		3.1e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:07	A	matched_2field_direct	0.0003	A01A03	mapped	148	1.1e-05						3.5e-05		1.2e-06						5e-05	2e-06	0.0003							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:08	A	matched_2field_direct	2.9e-05	A03	mapped	148	2.9e-05	2e-05					9e-06		8e-07															4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:10	A	matched_2field_direct	0.0004	A03	mapped	14	0.0002	0.0004															3e-06				1e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:12	A	matched_2field_direct	0.0001	A03	mapped	148							5.6e-05		1.29e-05	2e-05	4.3e-05			2.8e-05	0.0001		2.4e-05				8e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:15	A	matched_2field_direct	0.0004	A02	mapped	141	0.0001	0.0004			1e-05	0.0004	6.5e-05		8.9e-06						1.1e-05		2.7e-05							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:17	A	matched_2field_direct	0.0001	Unclassified	Unclassified	148	1.1e-05								1.2e-06						1.3e-05	2e-06	0.0001							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:20	A	matched_2field_direct	0.001	A03	mapped	141			0.001				4e-06		8e-07		2.2e-05		6e-06	1.1e-05	1e-05	5e-06	3e-06							9	retained	retained	below_floor	below_floor	below_floor	below_floor
+A*68:22	A	matched_2field_direct	2.8e-06	A03	mapped	148									2.8e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:24	A	matched_2field_direct	0.0001	A03	mapped	148							9e-06		4.8e-06				6e-06	7e-06		3.5e-05	7e-06			9e-05	0.0001			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:25	A	matched_2field_direct	1.17e-05	A03	mapped	148									1.17e-05															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:27	A	matched_2field_direct	4e-05	A02	mapped	148	1e-06	4e-05														2e-06								3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:30	A	matched_2field_direct	4.8e-05		no_scheme_match	30							9e-06		8e-07								4.8e-05				1e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:31	A	matched_2field_direct	7.2e-05		no_scheme_match	141					1e-05	2e-05									4e-06		7.2e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:35	A	matched_2field_direct	3.2e-06		no_scheme_match	148									3.2e-06						2e-06									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:37	A	matched_2field_direct	1.6e-06		no_scheme_match	148									1.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*68:40	A	matched_2field_direct	1.2e-05		no_scheme_match	149	1.2e-05																							1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*69:01	A	matched_2field_direct	0.0076	A02	mapped	148	0.0002	0.0009	0.001	0.001	0.0007	0.0003	0.0032	0.002	0.0014	0.0003	0.0008	8e-05	7.1e-05	0.0076	0.0035	0.001	0.0028		1.1e-05	0.0008	0.0006			20	retained	retained	retained	below_floor	below_floor	below_floor
+A*74:01	A	matched_2field_direct	0.0567	A03	mapped	54	0.0546	0.0567	0.003	0.001	0.0023	0.0558	0.0136	0.018	0.0004	0.0005	0.0014	0.0001	4.5e-05	0.0011	0.0044	0.0014	0.0073		0.0028	0.0024	0.0015			20	retained	retained	retained	retained	retained	retained
+A*74:03	A	matched_2field_direct	0.0005	A03	mapped	54	0.0002	0.0005			0.0001	9e-05	9e-06		0.0001		2.2e-05		3e-06	0.0002	1.7e-05	3e-06	9.5e-05			2e-05	3.2e-05			14	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+A*74:05	A	matched_2field_direct	0.0001	A03	mapped	39							2e-06		1.2e-06							3e-05	2e-06		0.0001	0.0001	1.6e-05			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*74:06	A	matched_2field_direct	4e-05	A03	mapped	54	1e-06	4e-05					2e-06		1.85e-05					7e-06										5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*74:09	A	matched_2field_direct	0.0004	A03	mapped	54	0.0003	0.0004																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*74:11	A	matched_2field_direct	0.0003	A03	mapped	54	0.0002	0.0003													2e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+A*80:01	A	matched_2field_direct	0.0077	A01	mapped	13	0.0074	0.0074	0.001		0.0007	0.0077	0.0042	0.003	0.0001	8.9e-05	4.3e-05		6e-06	0.0003	0.0013	1e-05	0.0016		1.1e-05	2e-05	3e-06			18	retained	retained	retained	below_floor	below_floor	below_floor
+B*07:02	B	matched_2field_direct	0.1306	B07	mapped	110	0.0729	0.0689	0.096	0.078	0.1005	0.0729	0.0568	0.051	0.1306	0.0099	0.0287	0.0588	0.0344	0.0565	0.0574	0.0079	0.0584		0.017	0.0334	0.044			20	retained	retained	retained	retained	retained	retained
+B*07:03	B	matched_2field_direct	0.001	B07	mapped	120	4e-06	2e-05		0.001			4.3e-05		1.89e-05		4.3e-05						2.7e-05							7	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*07:04	B	matched_2field_direct	0.0003	B07	mapped	110	8e-06				0.0001	2e-05	3.5e-05		0.0003			2e-05		7.1e-05	3.8e-05	5e-06	1.7e-05							10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:05	B	matched_2field_direct	0.0798	B07	mapped	110	0.0082	0.01	0.003	0.002	0.0021	0.0073	0.0053	0.006	0.003	0.0246	0.0052	0.0007	0.0066	0.0099	0.0049	0.0083	0.0052		0.0798	0.0217	0.025			20	retained	retained	retained	retained	retained	retained
+B*07:06	B	ABSENT_no_afnd_row		B07	mapped	110																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as B*07:06	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+B*07:07	B	matched_2field_direct	0.0001	B07	mapped	110	2.4e-05								2.66e-05	2e-05			4e-06	0.0001	1.7e-05		2.7e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:08	B	matched_2field_direct	3e-06	Unclassified	Unclassified	120									2.8e-06								3e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:09	B	matched_2field_direct	0.001	B07	mapped	110	0.0003	0.0003					0.0003	0.001	6.16e-05					5.6e-05	6e-06		9.5e-05							8	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*07:10	B	matched_2field_direct	0.0002	Unclassified	Unclassified	110	2.2e-05	2e-05							6.16e-05	1e-05				0.0002	1.5e-05		7e-06				3e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:12	B	matched_2field_direct	3.2e-05	B07	mapped	110	3.2e-05	2e-05													2e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:13	B	matched_2field_direct	7e-06	Unclassified	Unclassified	87	7e-06																							1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:14	B	matched_2field_direct	0.0002	B07	mapped	110	7e-06						5.6e-05		2.86e-05		4.3e-05			3.5e-05	0.0002	5e-06	9.2e-05							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:15	B	matched_2field_direct	1e-05	B07	mapped	108	1e-06				1e-05				8.4e-06															3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:16	B	matched_2field_direct	1e-05	B07	mapped	120	1e-06				1e-05				2.4e-06					7e-06										4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:20	B	matched_2field_direct	9.5e-05	B07	mapped	111	1e-06						2.2e-05		1.2e-06					1.4e-05	8e-06		9.5e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:23	B	matched_2field_direct	1e-05	B07	mapped	110					1e-05				3.6e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:26	B	matched_2field_direct	2e-05	B07	mapped	110	1e-06								4.4e-06	1e-05				7e-06			2e-05				1e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:36	B	matched_2field_direct	5e-06	B07	mapped	110									3.6e-06								2e-06				5e-06			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:37	B	matched_2field_direct	6.8e-06	B07	mapped	107									6.8e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:42	B	matched_2field_direct	1.6e-05	B07	mapped	110	2e-06								1.05e-05		1.6e-05			7e-06										4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:46	B	matched_2field_direct	4e-07		no_scheme_match	110									4e-07															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*07:51	B	matched_2field_direct	1.1e-05		no_scheme_match	109															1.1e-05		2e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:01	B	matched_2field_direct	0.1144	B08	mapped	128	0.0376	0.032	0.08	0.069	0.0822	0.0286	0.0414	0.035	0.1144	0.0062	0.0213	0.0051	0.0048	0.0536	0.0422	0.0046	0.039		0.0048	0.0321	0.0366			20	retained	retained	retained	retained	retained	retained
+B*08:02	B	matched_2field_direct	2e-05	B08	mapped	128		2e-05							1.6e-06	1e-05					2e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:09	B	matched_2field_direct	0.0001	B08	mapped	128	2e-05				0.0001				7.68e-05						1e-05									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:13	B	matched_2field_direct	6e-05	B08	mapped	128	1e-06				6e-05				1.65e-05					7e-06	4e-06									5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:18	B	matched_2field_direct	1.17e-05	B08	mapped	128	2e-06				1e-05				1.17e-05	1e-05					4e-06		3e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:20	B	matched_2field_direct	0.0005	B08	mapped	124	2e-06				1e-05				1.37e-05									0.0005						4	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:23	B	matched_2field_direct	1.3e-05	B08	mapped	128	1.3e-05								1.2e-06												3e-06			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*08:35	B	matched_2field_direct	2e-06		no_scheme_match	128									2e-06								2e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*13:01	B	matched_2field_direct	0.0635	Unclassified	Unclassified	75	9.7e-05	0.0001		0.001	0.0002	0.0006	0.0001	0.001	9.61e-05	0.028	0.0199	0.0111	0.0216	0.0005	0.0001	0.0635	0.0002		0.0394	0.028	0.0136			19	retained	retained	retained	retained	retained	retained
+B*13:02	B	matched_2field_direct	0.0321	Unclassified	Unclassified	75	0.0078	0.0123	0.017	0.013	0.0164	0.008	0.0088	0.007	0.0239	0.0048	0.0049	0.0037	0.0321	0.0319	0.0138	0.0291	0.0128		0.0077	0.0181	0.0184			20	retained	retained	retained	retained	retained	below_floor
+B*13:03	B	matched_2field_direct	0.0001	Unclassified	Unclassified	78	2.5e-05	0.0001					4e-06		4e-07				6e-06		2e-06									6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*13:04	B	matched_2field_direct	4e-06	Unclassified	Unclassified	78									4e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*13:12	B	matched_2field_direct	0.0002	Unclassified	Unclassified	76										0.0002	4.3e-05				2e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*14:01	B	matched_2field_direct	0.0122	B27	mapped	124	0.0079	0.0074	0.01	0.01	0.0079	0.0062	0.0067	0.005	0.0102	0.001	0.0028	0.0007	0.0122	0.0049	0.0087	0.0002	0.0089		0.0002	0.0004	0.0002			20	retained	retained	retained	retained	below_floor	below_floor
+B*14:02	B	matched_2field_direct	0.0441	B27	mapped	124	0.0216	0.0219	0.026	0.014	0.0204	0.0212	0.039	0.032	0.0286	0.0029	0.0092	0.0012	0.0002	0.0361	0.0428	0.001	0.0441		0.0004	0.0026	0.0017			20	retained	retained	retained	retained	retained	below_floor
+B*14:03	B	matched_2field_direct	0.0028	B27	mapped	124	0.0022	0.0024			0.0001	0.0028	0.0005	0.001	1.41e-05					9.9e-05	0.0001		0.0003			2e-05	3e-06			12	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*14:05	B	matched_2field_direct	0.0002	B27	mapped	124	0.0002	0.0002					7e-06							7e-06	2e-06		1.4e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:01	B	matched_2field_direct	0.085	B62	mapped	71	0.0108	0.0066	0.051	0.085	0.0616	0.009	0.0234	0.021	0.0606	0.0132	0.0201	0.0769	0.0839	0.0233	0.0306	0.03	0.0271		0.0108	0.0161	0.0161			20	retained	retained	retained	retained	retained	retained
+B*15:02	B	matched_2field_direct	0.1383	B62	mapped	123	0.0003	0.0004	0.001	0.002	0.0002	0.0009	0.0002	0.002	4.1e-05	0.0421	0.0081	0.0006	0.0034	0.0004	0.0003	0.0647	0.0003		0.1383	0.0403	0.0256			20	retained	retained	retained	retained	retained	retained
+B*15:03	B	matched_2field_direct	0.064	B27	mapped	71	0.064	0.063	0.005	0.001	0.0032	0.0555	0.02	0.024	0.0014	0.0004	0.0013	0.0001	5.2e-05	0.0051	0.0101	0.0007	0.0129		0.0002	0.0003	0.0002			20	retained	retained	retained	retained	retained	retained
+B*15:04	B	matched_2field_direct	0.0039	B62	mapped	71	3.5e-05	2e-05	0.001		1e-05	0.0001	0.001	0.001	1.13e-05	4.9e-05				1.4e-05	0.0002		0.0039			4e-05	4.9e-05			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:05	B	matched_2field_direct	0.0045	B62	mapped	78	1.1e-05				7e-05	0.0002	3e-05	0.001	2e-07	6.9e-05	0.0005	2e-05	1.3e-05	5.6e-05	2.5e-05	0.0004	0.0004		0.0001	0.0033	0.0045			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:06	B	matched_2field_direct	0.0106	Unclassified	Unclassified	71	2e-06								4e-07	0.002	0.0106		6e-06	7e-06	8e-06	4.5e-05	1.7e-05		2.3e-05	0.0001	8e-06			12	retained	retained	retained	retained	below_floor	below_floor
+B*15:07	B	matched_2field_direct	0.0105	B62	mapped	71	0.0001	9e-05	0.003	0.003	0.0069	0.0002	0.0004	0.001	0.0006	0.0001	9.2e-05	0.0047	0.0105	0.0003	0.0003	0.0016	0.0004		8.7e-05	0.0006	5.1e-05			20	retained	retained	retained	retained	below_floor	below_floor
+B*15:08	B	matched_2field_direct	0.0039	B07	mapped	123	3.7e-05	2e-05			0.0003	0.0002	0.0006	0.001	0.0001	0.0002	0.0002	0.0002	5.2e-05	0.001	6.5e-05	0.0001	0.0005		9.2e-05	0.003	0.0039			18	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:09	B	matched_2field_direct	0.0011	B27	mapped	123	6.4e-05	0.0001			0.0001	8e-05	0.0008		0.0002			2e-05		0.0011	0.0006	1e-05	0.0007		1.1e-05	0.0003	0.0002			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:10	B	matched_2field_direct	0.0378	B27	mapped	123	0.0346	0.0361	0.002	0.001	0.0013	0.0378	0.0105	0.011	0.0004	0.0002	0.0005	0.0002	0.0001	0.0011	0.0024	0.0001	0.0055		0.0016	0.0002	0.0002			20	retained	retained	retained	retained	retained	below_floor
+B*15:11	B	matched_2field_direct	0.0184	Unclassified	Unclassified	123	1.1e-05	1e-05					1.3e-05		8.4e-06	0.0012	0.0003		0.0184	4.9e-05	4.6e-05	0.0091	1.7e-05		0.0045	0.0011	6.4e-05			14	retained	retained	retained	retained	below_floor	below_floor
+B*15:113	B	matched_2field_direct	4e-05		no_scheme_match	71									4e-07											4e-05	2.4e-05			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:12	B	matched_2field_direct	0.0207	B62	mapped	69	1e-06						4e-06		8e-07	0.0002	8.7e-05				8e-06	0.0028	1e-05	3.7e-05	0.0207	0.0009	7.6e-05			12	retained	retained	retained	retained	retained	below_floor
+B*15:125	B	matched_2field_direct	1.6e-06		no_scheme_match	71									1.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:13	B	matched_2field_direct	0.0227	B62	mapped	123	0.0003	0.0003					3e-05		3.2e-06	0.0227	0.0067		3.2e-05	2.1e-05	3.6e-05	0.0006	1e-06		0.0023	0.0044	0.0002			14	retained	retained	retained	retained	retained	below_floor
+B*15:132	B	matched_2field_direct	1.97e-05		no_scheme_match	71									1.97e-05								1e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:14	B	matched_2field_direct	0.0001	B62	mapped	70	1e-06								4.4e-06									0.0001						3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:141	B	matched_2field_direct	8.9e-05		no_scheme_match	71										8.9e-05	4.3e-05													2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:15	B	matched_2field_direct	0.0106	B62	mapped	123		7e-05			6e-05	3e-05	0.0008		1.25e-05	2e-05	0.0002	8e-05	9.7e-05		0.0106	1.5e-05	0.0043				3e-06			13	retained	retained	retained	retained	below_floor	below_floor
+B*15:16	B	matched_2field_direct	0.0205	B58	mapped	105	0.018	0.0179	0.001		0.0009	0.0205	0.0108	0.015	0.0006	2.4e-05	0.0005			0.0007	0.0019	1.5e-05	0.0031		4.6e-05	2e-05	3e-05			17	retained	retained	retained	retained	retained	below_floor
+B*15:17	B	matched_2field_direct	0.0148	B58	mapped	105	0.0045	0.0061	0.004	0.001	0.0022	0.005	0.0078	0.008	0.0036	0.0008	0.0027	0.0002	0.0005	0.0148	0.0045	0.0008	0.0068		0.0006	0.0107	0.0143			20	retained	retained	retained	retained	below_floor	below_floor
+B*15:18	B	matched_2field_direct	0.0154	B27	mapped	123	0.0015	0.0012	0.003	0.001	0.0025	0.0015	0.0072	0.009	0.0026	0.0019	0.0018	0.0154	0.0135	0.003	0.0014	0.0093	0.0021		0.0063	0.01	0.0135			20	retained	retained	retained	retained	below_floor	below_floor
+B*15:20	B	matched_2field_direct	0.0002	B62	mapped	78	4e-06	2e-05					0.0002		4e-07						1e-05	5e-06	0.0002							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:21	B	matched_2field_direct	0.0332	Unclassified	Unclassified	123	7e-06						9e-06		2.8e-06	0.0325	0.0332		6e-06	1.4e-05	4e-05	0.0002	2.7e-05		0.0012	0.0037	2.8e-05			13	retained	retained	retained	retained	retained	below_floor
+B*15:23	B	matched_2field_direct	9.5e-05	B27	mapped	123	2.9e-05				1e-05	2e-05	9.5e-05		3.62e-05					4.9e-05	1.3e-05		2e-05							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:24	B	matched_2field_direct	0.0004	B62	mapped	71	2.3e-05				0.0002	5e-05	0.0001		0.0004	1e-05		3e-05		0.0003	0.0001	3e-06	0.0002							11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:25	B	matched_2field_direct	0.0505	B62	mapped	71	0.0001	0.0001			6e-05	0.0002	0.0004	0.001	7.2e-06	0.003	0.0011	0.0002	0.0004	6.3e-05	4.8e-05	0.0074	9.2e-05		0.0505	0.0078	0.0051			18	retained	retained	retained	retained	retained	retained
+B*15:27	B	matched_2field_direct	0.0112	Unclassified	Unclassified	71					3e-05	3e-05			3.6e-06	0.0022	0.0005	0.001	0.0033	7e-06	4e-06	0.0112	3e-06	6.8e-05	0.0026	0.0013	2.4e-05			15	retained	retained	retained	retained	below_floor	below_floor
+B*15:28	B	matched_2field_direct	1.9e-05	B62	mapped	71													1.9e-05		1.1e-05									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:29	B	matched_2field_direct	0.0026	Unclassified	Unclassified	123	1.2e-05				3e-05	2e-05	4e-06		2.17e-05	2e-05	4.3e-05		6e-06	0.0007	5.7e-05	0.0001	2.7e-05			0.0021	0.0026			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:30	B	matched_2field_direct	0.0059	B62	mapped	71	1.1e-05				3e-05	2e-05	0.0007		1.29e-05	8.9e-05	2.2e-05		1.9e-05	3.9e-05	0.0059	1e-05	0.0021	3.3e-05		4e-05				14	retained	retained	retained	below_floor	below_floor	below_floor
+B*15:31	B	matched_2field_direct	0.0006	B62	mapped	127	0.0003	0.0006					0.0002		1.93e-05		1.7e-05			0.0001	4.4e-05	5e-05	0.0001							9	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:32	B	matched_2field_direct	0.0013	Unclassified	Unclassified	71									2e-06	4.9e-05	0.0002		2.6e-05		6e-06	0.0003	3e-06		6.9e-05	0.0013	0.0006			10	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:33	B	matched_2field_direct	2.1e-05	B62	mapped	71					1e-05		1.3e-05		8.9e-06					2.1e-05			2e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:34	B	matched_2field_direct	4e-05	B62	mapped	71	1e-06								2.09e-05						8e-06		3e-06			4e-05	1.6e-05			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:35	B	matched_2field_direct	0.0783	B62	mapped	71	7e-06				6e-05		1.7e-05		1.53e-05	0.0783	0.0101	0.0001	7.4e-05		6.5e-05	0.0001	5.1e-05		0.002	0.0011	4.9e-05			14	retained	retained	retained	retained	retained	retained
+B*15:37	B	matched_2field_direct	0.0008	B27	mapped	123	0.0008	0.0006			1e-05	0.0006	7.4e-05		1.6e-06					7e-06	2.3e-05		7.2e-05							9	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:38	B	matched_2field_direct	0.0013	B62	mapped	71							4.8e-05		8e-07				0.0013		1.1e-05	1.5e-05	1.7e-05			4e-05	7.8e-05			8	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:39	B	matched_2field_direct	0.0012	B62	mapped	71	1.8e-05	1e-05			0.0001		9.2e-05		9.29e-05	3e-05	4.3e-05		2.6e-05	2.8e-05	0.0012	3.5e-05	0.0007		1.1e-05		3.2e-05			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:40	B	matched_2field_direct	0.003	B62	mapped	68	4e-06						0.0021	0.003	3.2e-06				6e-06		6e-05	5e-06	0.0003							8	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*15:42	B	matched_2field_direct	1.6e-06	B62	mapped	72									1.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:44	B	matched_2field_direct	0.0002	Unclassified	Unclassified	124										0.0002									1.1e-05					2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:45	B	matched_2field_direct	3.86e-05	B62	mapped	71	4e-06				3e-05				3.86e-05	3e-05		1e-05		7e-06	6e-06									7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:46	B	matched_2field_direct	0.0002	B44	mapped	71													2e-06		3e-06	0.0002			2.3e-05	4e-05				5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:47	B	matched_2field_direct	0.0003	B27	mapped	68	0.0003	0.0003			3e-05	0.0002	0.0001								3.1e-05		6.8e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:48	B	matched_2field_direct	0.0002	B62	mapped	82							2.6e-05		1.2e-06	2e-05				7e-06	0.0002		0.0002							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:52	B	matched_2field_direct	0.0002	B27	mapped	125	0.0002	0.0002					9e-06						6e-06				5e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:53	B	matched_2field_direct	8e-05	B44	mapped	71	7e-06				8e-05				2.8e-06				1e-06		1e-06			4.5e-05						6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:54	B	matched_2field_direct	0.0002	B27	mapped	71	0.0002	0.0002					9e-06								1e-06		3e-06				2e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:55	B	matched_2field_direct	4e-05	B62	mapped	127		4e-05												2.1e-05	1.1e-05		1e-05		1.1e-05	2e-05				6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:56	B	matched_2field_direct	0.0002	Unclassified	Unclassified	71	1e-06						9e-06		4e-07	0.0002														4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:58	B	matched_2field_direct	0.0004	B62	mapped	71									4e-07	5.9e-05			1.9e-05			0.0004	2e-06		2.3e-05	2e-05				7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:63	B	matched_2field_direct	0.0004	B62	mapped	71					0.0004				2e-06	1e-05		4e-05			1.5e-05	5e-06	2.7e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:65	B	matched_2field_direct	2e-05	B62	mapped	71		2e-05							1.01e-05				6e-06		6e-06	5e-06	3e-06				3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:71	B	matched_2field_direct	1.13e-05	Unclassified	Unclassified	71	1e-06								1.13e-05					7e-06										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:73	B	matched_2field_direct	8.1e-05	B62	mapped	71	1e-06								1.53e-05					8.1e-05										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:75	B	matched_2field_direct	7.6e-05	B62	mapped	73																	1e-06			7e-05	7.6e-05			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*15:82	B	matched_2field_direct	7.6e-06	B62	mapped	71									7.6e-06					7e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:01	B	matched_2field_direct	0.0724	B44	mapped	128	0.032	0.0319	0.039	0.026	0.0323	0.0315	0.0427	0.035	0.0443	0.0246	0.0168	0.0021	0.0006	0.0724	0.0409	0.0026	0.0411		0.0108	0.0294	0.0252			20	retained	retained	retained	retained	retained	retained
+B*18:02	B	matched_2field_direct	0.0057	B44	mapped	128	1e-05				1e-05	1e-05	4e-06		1.6e-06	0.0057	0.0025				1.7e-05	0.0015	1e-05		0.0047	0.0037	8.6e-05			13	retained	retained	retained	below_floor	below_floor	below_floor
+B*18:03	B	matched_2field_direct	0.0003	B44	mapped	128	2e-05	0.0001			2e-05	6e-05	6.9e-05		0.0001		4.3e-05			0.0003	5.2e-05	5e-06	3.1e-05							11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:04	B	matched_2field_direct	0.0003	Unclassified	Unclassified	128	1e-05				3e-05		0.0003		3.1e-05					4.9e-05	3.4e-05		4.8e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:05	B	matched_2field_direct	0.0002	B44	mapped	128	2e-06						1.3e-05		2.45e-05		4.3e-05			0.0002	1e-05		8.2e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:06	B	matched_2field_direct	4.3e-05	B44	mapped	131	2e-06						1.3e-05		8e-07	4e-05	4.3e-05			7e-06	4e-06									7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:08	B	matched_2field_direct	4e-07	Unclassified	Unclassified	128									4e-07															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:11	B	matched_2field_direct	4.9e-05	B44	mapped	128		2e-05							5.2e-06	1e-05				4.9e-05	2e-06		3e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:12	B	matched_2field_direct	4.3e-05	Unclassified	Unclassified	80	5e-06				1e-05				1.17e-05		4.3e-05			7e-06	4e-06		3e-06				3e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:13	B	matched_2field_direct	2.09e-05	B44	mapped	128	1e-06								2.09e-05						4e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:14	B	matched_2field_direct	2.17e-05	B44	mapped	128					1e-05				2.17e-05						2e-06	5e-06	7e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:18	B	matched_2field_direct	7.1e-05	Unclassified	Unclassified	128									8.4e-06					7.1e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:20	B	matched_2field_direct	3.5e-05	B44	mapped	128									7.6e-06					3.5e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:25	B	matched_2field_direct	0.0001		no_scheme_match	128	4.6e-05	0.0001							8e-07								3e-06				3e-06			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*18:33	B	matched_2field_direct	4.9e-05		no_scheme_match	128									1.2e-06					4.9e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:01	B	matched_2field_direct	4e-05	B27	mapped	67	4e-06				4e-05		2e-06		3.1e-05					7e-06	3e-06						3e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:02	B	matched_2field_direct	0.0059	B27	mapped	67	0.0004	0.0005	0.002	0.001	0.0028	0.0004	0.0035	0.002	0.0039	0.0001	0.0004	0.0002	5.8e-05	0.0059	0.0019	7e-05	0.0019		2e-06	0.0009	0.0008			20	retained	retained	retained	below_floor	below_floor	below_floor
+B*27:03	B	matched_2field_direct	0.0044	B27	mapped	67	0.0033	0.0044					0.0003		6.8e-05		4.3e-05			0.0004	0.0003		0.0005		1.1e-05	2e-05	1.9e-05			11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*27:04	B	matched_2field_direct	0.0191	B27	mapped	65	1.8e-05	1e-05			0.0001	0.0001	2.8e-05		6.4e-06	0.0066	0.006	0.002	0.0023	0.0003	6e-06	0.0191	2.7e-05		0.0113	0.0055	0.002			17	retained	retained	retained	retained	below_floor	below_floor
+B*27:05	B	matched_2field_direct	0.089	B27	mapped	67	0.0084	0.0059	0.04	0.089	0.0545	0.0067	0.0172	0.016	0.0373	0.0032	0.0076	0.0023	0.0249	0.0148	0.0222	0.0035	0.016		0.0024	0.0071	0.0083			20	retained	retained	retained	retained	retained	retained
+B*27:06	B	matched_2field_direct	0.0236	B27	mapped	65	0.0003	0.0001			1e-05		1.3e-05		5.6e-06	0.0236	0.0034	6e-05	8.2e-05	1.4e-05	0.0001	0.001	8.9e-05		0.0108	0.0041	9.3e-05			16	retained	retained	retained	retained	retained	below_floor
+B*27:07	B	matched_2field_direct	0.0051	B27	mapped	67	5.8e-05	0.0002			0.0002	0.0002	0.0005	0.001	0.0003	8.9e-05	0.0003	4e-05	7.7e-05	0.0019	0.0002	0.0007	0.0003		0.0002	0.004	0.0051			18	retained	retained	retained	below_floor	below_floor	below_floor
+B*27:08	B	matched_2field_direct	0.0002	Unclassified	Unclassified	67	2.3e-05	7e-05			0.0001	3e-05	9.5e-05		8.77e-05	1e-05				3.5e-05	9.4e-05		0.0002							10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:09	B	matched_2field_direct	0.0002	B27	mapped	67	8e-06	2e-05			1e-05	2e-05			6.11e-05	2e-05				0.0002	1.7e-05	2e-06	1.7e-05				8e-06			11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:10	B	matched_2field_direct	9.37e-05	B27	mapped	65	5e-06				1e-05		2e-06		9.37e-05	4e-06	2.2e-05			2.8e-05	3.6e-05				6e-06					9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:12	B	matched_2field_direct	0.0003	Unclassified	Unclassified	75	1.9e-05	2e-05			3e-05	0.0001	9.5e-05		6.72e-05	6e-06			6e-06	0.0003	7.8e-05		9.9e-05							11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:14	B	matched_2field_direct	0.0004	B27	mapped	67	3.2e-05				0.0004	2e-05			9.09e-05					2.8e-05	1.3e-05	5e-06	3e-06							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:15	B	matched_2field_direct	0.0001	B27	mapped	66					1e-05					2e-05						0.0001			3.4e-05					4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:17	B	matched_2field_direct	1.6e-06	B27	mapped	67	1e-06								1.6e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:19	B	matched_2field_direct	4.2e-05	B27	mapped	67														4.2e-05			3e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:20	B	matched_2field_direct	0.0002	B27	mapped	65													0.0002						1.1e-05					2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:24	B	matched_2field_direct	7.5e-05	B27	mapped	65																7.5e-05				2e-05				2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*27:27	B	matched_2field_direct	1.7e-05	B27	mapped	67							2e-06		1.6e-06						1.7e-05		7e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:01	B	matched_2field_direct	0.0979	B07	mapped	127	0.0689	0.0668	0.081	0.087	0.0979	0.0734	0.0479	0.044	0.056	0.0225	0.0203	0.0869	0.0599	0.0649	0.0798	0.0223	0.0713		0.0101	0.0476	0.0622			20	retained	retained	retained	retained	retained	retained
+B*35:02	B	matched_2field_direct	0.0329	B07	mapped	127	0.0008	0.0019	0.006	0.004	0.0045	0.0013	0.0159	0.017	0.0102	0.0007	0.0045	0.0004	0.0003	0.0329	0.0126	0.0007	0.0129		0.0002	0.0082	0.0073			20	retained	retained	retained	retained	retained	below_floor
+B*35:03	B	matched_2field_direct	0.072	B07	mapped	127	0.002	0.0016	0.011	0.011	0.0095	0.0043	0.0238	0.03	0.0162	0.0044	0.0077	0.0005	0.0046	0.031	0.013	0.0079	0.0147		0.0057	0.0512	0.072			20	retained	retained	retained	retained	retained	retained
+B*35:04	B	matched_2field_direct	0.0043	B07	mapped	127	2.4e-05	2e-05	0.001		8e-05	0.0002	0.0033	0.003	1.5e-05		4.3e-05	3e-05	1.3e-05	1.4e-05	0.0007	1.5e-05	0.0043				1e-06			16	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:05	B	matched_2field_direct	0.0816	B07	mapped	127	0.0004	0.0002	0.001		0.0001	0.0004	0.0018	0.002	3.78e-05	0.0816	0.0563	0.0005	6.3e-05	7.1e-05	0.0015	0.0054	0.0056		0.0251	0.0068	0.0006			19	retained	retained	retained	retained	retained	retained
+B*35:06	B	matched_2field_direct	0.001	B07	mapped	127	8e-06						0.0006	0.001	1.41e-05		4.3e-05		1.3e-05		4.8e-05	5e-06	0.0004		1.1e-05	9e-05	4e-05			12	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:08	B	matched_2field_direct	0.0181	B07	mapped	127	0.0004	0.0009	0.003	0.003	0.0015	0.0007	0.0041	0.004	0.0043	0.0002	0.0015	0.0001	9.7e-05	0.0181	0.0052	0.0005	0.006		3.4e-05	0.0026	0.002			20	retained	retained	retained	retained	below_floor	below_floor
+B*35:09	B	matched_2field_direct	0.0004	B07	mapped	127							1.3e-05		1.2e-06	2e-05					3.4e-05		0.0004				1e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:10	B	matched_2field_direct	0.0011	Unclassified	Unclassified	78	6e-06						0.0001		5.6e-06						0.0002		0.0011							5	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:11	B	matched_2field_direct	0.0011	B07	mapped	123	3.5e-05				1e-05	0.0002	0.0011	0.001	1.05e-05	1e-05	8.7e-05	4e-05		7e-06	9.2e-05	1.5e-05	0.0004				5e-06			14	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:12	B	matched_2field_direct	0.0223	B07	mapped	127	0.0001	7e-05	0.004	0.001	0.0008	0.0005	0.0081	0.008	0.0001	9.9e-05	0.0006	1e-05		0.0001	0.0223	3e-06	0.0179		1.1e-05	2e-05	2.2e-05			19	retained	retained	retained	retained	retained	below_floor
+B*35:13	B	matched_2field_direct	2e-05	Unclassified	Unclassified	78																				2e-05	1.6e-05			2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:14	B	matched_2field_direct	0.0034	B07	mapped	123	2e-06		0.001		0.0001		0.0001		1.65e-05	1e-05	8.7e-05			4.2e-05	0.0034	5e-06	0.0018							11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:15	B	matched_2field_direct	4.4e-05	B07	mapped	125	1e-06								4e-07					7e-06	1.3e-05	1e-06	4.4e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:16	B	matched_2field_direct	0.0004	Unclassified	Unclassified	78	1e-06				1e-05		2.6e-05		3.2e-06					7e-06	0.0004		0.0002							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:17	B	matched_2field_direct	0.0107	B07	mapped	127	1.7e-05	2e-05	0.002		0.0003	5e-05	0.0005		5.95e-05	6.9e-05	0.0001	1e-05	2.6e-05	0.0001	0.0107	1e-05	0.0051		2e-06	2e-05	8e-06			18	retained	retained	retained	retained	below_floor	below_floor
+B*35:19	B	matched_2field_direct	9.5e-05	Unclassified	Unclassified	127	1e-06						9e-06								4e-06		9.5e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:20	B	matched_2field_direct	0.0027	Unclassified	Unclassified	127	2.5e-05	2e-05	0.001		0.0002	3e-05	0.0011	0.001	2.45e-05	1e-05	2.2e-05	2e-05		4.9e-05	0.0009	5e-06	0.0027		6e-06		1.6e-05			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*35:21	B	matched_2field_direct	0.0005	B07	mapped	123	2e-06						0.0001		8e-07				6e-06	1.4e-05	0.0005		0.0004			2e-05				8	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:22	B	matched_2field_direct	0.0008	B07	mapped	127	1e-06						0.0001		2.4e-06		0.0003				5.9e-05		0.0008							6	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:23	B	matched_2field_direct	0.0002	Unclassified	Unclassified	127	1e-06						5.2e-05		1.2e-06				6e-06		0.0002		0.0002			2e-05	1.6e-05			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:24	B	matched_2field_direct	0.0003	B07	mapped	127	5e-06						1.7e-05		2.4e-06					1.4e-05	0.0003	3e-06	0.0001				5e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:25	B	matched_2field_direct	2.1e-05	Unclassified	Unclassified	127	1e-06								8e-07					2.1e-05			1e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:26	B	matched_2field_direct	7.2e-05	B27	mapped	127							9e-06		4e-07	1e-05					1.9e-05		7.2e-05							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:27	B	matched_2field_direct	4.67e-05	Unclassified	Unclassified	127	3e-05				1e-05		1e-06		4.67e-05		4.3e-05			7e-06	2.1e-05	1e-06								8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:28	B	matched_2field_direct	0.0006	B62	mapped	78	1e-06						9e-06		5.2e-06						0.0006		0.0002							5	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:29	B	matched_2field_direct	3e-05	B07	mapped	127		1e-05			3e-05		2e-06		9.3e-06	4e-06						1e-06	3e-06				5e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:30	B	matched_2field_direct	0.0008	B07	mapped	127		2e-05					4e-06		4e-07	0.0008	4.3e-05		1.3e-05		3.9e-05	3e-05	0.0004			0.0001				10	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:31	B	matched_2field_direct	0.0009	B07	mapped	125							9.1e-05		1.2e-06				0.0001		3.1e-05		0.0009			1e-05	3e-06			7	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:32	B	matched_2field_direct	4e-05	B07	mapped	127	6e-06	4e-05					9e-06		4.8e-06					7e-06	1e-05		3e-06							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:34	B	matched_2field_direct	8.7e-05	B07	mapped	127	1.2e-05	4e-05					8.7e-05		4.8e-06		4.3e-05		2.6e-05		5.2e-05		4.1e-05			2e-05	8e-06			10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:41	B	matched_2field_direct	6.16e-05	B07	mapped	127	8e-06				1e-05				6.16e-05					1.4e-05			3e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:43	B	matched_2field_direct	0.0185	B07	mapped	123	9.2e-05		0.004		0.0002	0.0004	0.0019	0.001	3.94e-05	7.9e-05	0.0003			0.0001	0.0047	5e-06	0.0185			2e-05	1.1e-05			15	retained	retained	retained	retained	below_floor	below_floor
+B*35:47	B	matched_2field_direct	5.9e-05	Unclassified	Unclassified	127							4e-06		8e-07						5.9e-05		1.4e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:48	B	matched_2field_direct	5.1e-05	Unclassified	Unclassified	127							4e-06								2.3e-05		5.1e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:49	B	matched_2field_direct	0.0002	Unclassified	Unclassified	127	1.8e-05	2e-05							4e-07						8e-06		0.0002							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:55	B	matched_2field_direct	7.6e-06	B07	mapped	127							4e-06		7.6e-06						4e-06		3e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*35:77	B	matched_2field_direct	0.0008		no_scheme_match	127									8e-07					7e-06				0.0008						3	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*37:01	B	matched_2field_direct	0.0341	B44	mapped	80	0.0055	0.0062	0.012	0.01	0.0108	0.0049	0.0088	0.01	0.0144	0.0026	0.0045	0.0048	0.0158	0.0111	0.0073	0.006	0.0075		0.0078	0.0251	0.0341			20	retained	retained	retained	retained	retained	below_floor
+B*37:02	B	matched_2field_direct	0.0002	Unclassified	Unclassified	75	1e-06								1.09e-05					0.0002							5e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*37:07	B	matched_2field_direct	1.7e-05	Unclassified	Unclassified	68							1.7e-05		4e-07						4e-06		7e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*38:01	B	matched_2field_direct	0.0369	B27	mapped	130	0.0022	0.0026	0.013	0.007	0.0102	0.0026	0.0182	0.016	0.0209	0.0017	0.0034	0.001	0.0012	0.0369	0.0183	0.0041	0.0199		0.0019	0.0043	0.0028			20	retained	retained	retained	retained	retained	below_floor
+B*38:02	B	matched_2field_direct	0.1272	Unclassified	Unclassified	130	7.3e-05	0.0001		0.001	0.0003	0.0006	9.1e-05	0.001	3.78e-05	0.1272	0.0174	0.0033	0.0096	0.0002	0.0003	0.04	0.0002		0.0584	0.0151	0.0069			19	retained	retained	retained	retained	retained	retained
+B*38:06	B	matched_2field_direct	0.0001	B07	mapped	130	2e-06	2e-05			0.0001				1.2e-06				3e-06				2e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*38:09	B	matched_2field_direct	1.61e-05	B27	mapped	130	1e-06								1.61e-05					7e-06										3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:01	B	matched_2field_direct	0.0393	B27	mapped	130	0.0032	0.0018	0.021	0.015	0.0339	0.0018	0.0074	0.01	0.0112	0.0107	0.0393	0.0303	0.0146	0.0098	0.0082	0.0193	0.0073		0.0087	0.0074	0.0055			20	retained	retained	retained	retained	retained	below_floor
+B*39:02	B	matched_2field_direct	0.0057	B27	mapped	83	4.6e-05	1e-05	0.001		0.0003	0.0001	0.0011	0.001	2.9e-05	9.9e-05	0.0001	0.0033	1e-05	2.1e-05	0.0057	2.5e-05	0.0045			1e-05	1.1e-05			18	retained	retained	retained	below_floor	below_floor	below_floor
+B*39:03	B	matched_2field_direct	0.0008	B27	mapped	130	4e-05	9e-05			3e-05	0.0001	9.5e-05		4.67e-05	3e-05	8.7e-05		3e-06	0.0002	0.0001	3e-05	0.0008				8e-06			14	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:04	B	matched_2field_direct	0.0004	B27	mapped	130		1e-05					3e-06		2e-06		1.6e-05		0.0004	1.4e-05	2.1e-05	6e-06	6e-06							9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:05	B	matched_2field_direct	0.0322	B27	mapped	130	0.0002	4e-05	0.005		0.0009	0.0006	0.0109	0.007	0.0001	0.0003	0.007	8e-05	0.0001	0.0003	0.0322	0.002	0.0233		0.0038	0.0003	1.9e-05			19	retained	retained	retained	retained	retained	below_floor
+B*39:06	B	matched_2field_direct	0.0287	B27	mapped	130	0.0014	0.0009	0.018	0.007	0.0176	0.001	0.0055	0.005	0.0064	0.0004	0.0013	0.0002	5.8e-05	0.0041	0.0287	9.5e-05	0.0146		8e-05	0.001	0.0011			20	retained	retained	retained	retained	retained	below_floor
+B*39:07	B	matched_2field_direct	0.0372	B27	mapped	130							3.5e-05						6e-06		1.5e-05		0.0002	0.0372						5	retained	retained	retained	retained	retained	below_floor
+B*39:08	B	matched_2field_direct	0.0054	B27	mapped	83	7e-06		0.002		0.0001	6e-05	0.0003		1.45e-05		0.0011			2.8e-05	0.0027	5e-06	0.0054		1.1e-05		5e-06			13	retained	retained	retained	below_floor	below_floor	below_floor
+B*39:09	B	matched_2field_direct	0.0045	B27	mapped	130	1.2e-05	2e-05			6e-05	6e-05	0.0004		1.25e-05	0.0004	0.0005	4e-05	1e-05	2.1e-05	0.0002	0.0009	0.0021		0.0045	0.0022	0.0002			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*39:10	B	matched_2field_direct	0.0114	B07	mapped	130	0.0081	0.0114	0.001		0.0003	0.0094	0.001	0.001	7.44e-05	4e-05	0.0002	1e-05	3.2e-05	0.0008	0.0004	1.5e-05	0.0009		2.3e-05	9e-05	3.8e-05			19	retained	retained	retained	retained	below_floor	below_floor
+B*39:11	B	matched_2field_direct	0.0035	B27	mapped	130	4e-06		0.001				0.0003		5.2e-06					2.8e-05	0.0006		0.0035							7	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*39:12	B	matched_2field_direct	0.0003	Unclassified	Unclassified	130							5.6e-05		8e-07		2.8e-05				8e-06	2e-06	0.0003							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:13	B	matched_2field_direct	0.0009	B27	mapped	83	1.7e-05						0.0005		2e-06						2.5e-05		0.0009							5	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:14	B	matched_2field_direct	0.0006	B27	mapped	130					1e-05		4.8e-05		8e-07				3e-06	7e-06	2.3e-05		0.0006							7	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:15	B	matched_2field_direct	0.0014	B27	mapped	130	2.2e-05				1e-05				1.2e-06	0.0014	0.0002	2e-05	1.3e-05			0.0002			0.0009	0.0007	1.1e-05			11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*39:20	B	matched_2field_direct	0.0001	Unclassified	Unclassified	130	1.8e-05						9e-06		1.6e-06		4.3e-05				0.0001		6.5e-05							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:22	B	matched_2field_direct	0.0001	Unclassified	Unclassified	83							2.6e-05								6e-06		0.0001							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:24	B	matched_2field_direct	0.0013	B27	mapped	130	0.0001	0.0004			8e-05	0.0001	5.2e-05		0.0003		0.0001		2.6e-05	0.0013	5.9e-05	2e-06	9.2e-05				6.2e-05			13	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*39:26	B	matched_2field_direct	8e-07	B27	mapped	119									8e-07															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:31	B	matched_2field_direct	0.0002	Unclassified	Unclassified	130	1e-05						1e-06		6.64e-05					0.0002	2e-06	2e-06	4e-06				1.9e-05			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:37	B	matched_2field_direct	3.1e-05		no_scheme_match	130							4e-06								1.7e-05		3.1e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*39:39	B	matched_2field_direct	2.7e-05		no_scheme_match	130															1.5e-05		2.7e-05							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:01	B	matched_2field_direct	0.1543	B44	mapped	75	0.0128	0.0087	0.044	0.046	0.0518	0.0097	0.017	0.015	0.0528	0.0924	0.1543	0.0603	0.042	0.0206	0.0143	0.1538	0.0144		0.0533	0.045	0.0221			20	retained	retained	retained	retained	retained	retained
+B*40:02	B	matched_2field_direct	0.116	B44	mapped	75	0.0033	0.0027	0.03	0.116	0.031	0.0035	0.0301	0.028	0.0126	0.0771	0.0482	0.0766	0.0467	0.0093	0.0573	0.0173	0.0478		0.0076	0.0069	0.003			20	retained	retained	retained	retained	retained	retained
+B*40:03	B	matched_2field_direct	0.0068	B44	mapped	75	1.2e-05	2e-05					0.0006	0.001	2e-06	0.0002	0.0002		0.0068	2e-06	3.1e-05	0.0013	0.0002		0.0002	0.0001	7e-06			15	retained	retained	retained	below_floor	below_floor	below_floor
+B*40:04	B	matched_2field_direct	0.0043	B44	mapped	75	1.8e-05						0.0043	0.004	1.85e-05				6e-06	1.4e-05	0.0002		0.0041				1.9e-05			9	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:05	B	matched_2field_direct	0.0083	B44	mapped	71	2.3e-05		0.002	0.001	0.0031		0.0002		4.43e-05	5.9e-05	0.0004	0.0001		4.2e-05	0.0083	2.5e-05	0.0021				8e-06			14	retained	retained	retained	below_floor	below_floor	below_floor
+B*40:06	B	matched_2field_direct	0.0914	B44	mapped	75	0.0004	0.0005	0.004	0.001	0.0006	0.003	0.0009	0.01	0.0003	0.0046	0.0068	0.0445	0.0336	0.0037	0.0013	0.0172	0.0013		0.011	0.0634	0.0914			20	retained	retained	retained	retained	retained	retained
+B*40:07	B	matched_2field_direct	4.3e-05	Unclassified	Unclassified	75		1e-05							3.6e-06		4.3e-05		1.3e-05	7e-06	4e-06									6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:08	B	matched_2field_direct	0.0039	Unclassified	Unclassified	125	3.1e-05		0.001		0.0001	0.0001	0.0004		2.7e-05	5.9e-05	0.0004	4e-05	6e-06	4.2e-05	0.0039	5e-06	0.0026			4e-05				15	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:09	B	matched_2field_direct	8e-06	B44	mapped	75							4e-06								8e-06		7e-06							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:10	B	matched_2field_direct	0.0218	B44	mapped	75	1e-06						4e-06		3.2e-06	0.0065	0.0218			7e-06	2e-06	3.3e-05	3e-06		2.3e-05	0.0001				11	retained	retained	retained	retained	retained	below_floor
+B*40:11	B	matched_2field_direct	0.0018	B44	mapped	75	5e-06		0.001		8e-05		0.0001		8.4e-06	2e-05	0.0005	6e-05	1.9e-05	2.1e-05	0.0018	3e-05	0.0011			2e-05	3e-06			15	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:114	B	matched_2field_direct	1.2e-06		no_scheme_match	75									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:12	B	matched_2field_direct	0.0012	B27	mapped	75	0.0009	0.0012					5.2e-05		2.8e-06					0.0001	4.4e-05		0.0				3e-06			8	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:129	B	matched_2field_direct	0.0		no_scheme_match	75																	0.0							1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:13	B	matched_2field_direct	2.7e-05	Unclassified	Unclassified	75																	2.7e-05							1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:16	B	matched_2field_direct	0.0002	B44	mapped	68	0.0002	0.0002					6.1e-05		4e-07					7e-06	4e-05	3e-06	4.4e-05							8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:19	B	matched_2field_direct	3.5e-05	B44	mapped	75							4e-06		4e-06					3.5e-05							3e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:20	B	matched_2field_direct	0.0004	B44	mapped	75					1e-05		3.9e-05		2.4e-06			2e-05	1.9e-05		0.0004		0.0001							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:23	B	matched_2field_direct	0.001	B44	mapped	68	2e-06				1e-05					1e-05	4.3e-05			7e-06	2e-06					0.0009	0.001			8	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:26	B	matched_2field_direct	0.0001	B44	mapped	71														7e-06			3e-06			0.0001	9.4e-05			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:27	B	matched_2field_direct	0.0011	Unclassified	Unclassified	75	1e-06				6e-05		0.0002		8.4e-06	2e-05		1e-05	3.1e-05	1.4e-05	0.0011	5e-06	0.0006							11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*40:30	B	matched_2field_direct	1e-05	B44	mapped	75	8e-06				1e-05				8e-07															3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:32	B	matched_2field_direct	9.7e-06		no_scheme_match	68									9.7e-06					7e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:40	B	matched_2field_direct	0.0003	B44	mapped	75					1e-05								3.2e-05		6e-06	0.0003	3e-06			4e-05				6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:43	B	matched_2field_direct	9e-06	B44	mapped	75							9e-06		4e-07								3e-06				2e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:50	B	matched_2field_direct	0.0003	B44	mapped	75	1e-06										4.3e-05			1.4e-05						9e-05	0.0003			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:64	B	matched_2field_direct	2e-05		no_scheme_match	75							9e-06		4e-07						2e-06		2e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:90	B	matched_2field_direct	1e-05		no_scheme_match	75	5e-06				1e-05																			2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*40:94	B	matched_2field_direct	1.2e-06		no_scheme_match	75									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*41:01	B	matched_2field_direct	0.0269	B44	mapped	80	0.003	0.0084	0.004	0.002	0.0028	0.0026	0.0099	0.01	0.0043	0.001	0.0076	0.0004	8.4e-05	0.0269	0.0099	0.0004	0.0101		0.0009	0.0036	0.0035			20	retained	retained	retained	retained	retained	below_floor
+B*41:02	B	matched_2field_direct	0.0092	B44	mapped	80	0.0056	0.0058	0.003	0.003	0.0031	0.0044	0.0092	0.009	0.005	0.0003	0.0011	0.0001	3.2e-05	0.0078	0.0042	5.5e-05	0.0052		9.2e-05	0.0009	0.0006			20	retained	retained	retained	below_floor	below_floor	below_floor
+B*41:03	B	matched_2field_direct	0.0007	B44	mapped	80	0.0006	0.0007					5.6e-05		1.6e-06						2.9e-05		2.7e-05							6	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*41:07	B	matched_2field_direct	4.3e-05	B44	mapped	80							3.5e-05				4.3e-05				2e-06		2e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*42:01	B	matched_2field_direct	0.0534	B07	mapped	117	0.0531	0.0496	0.003	0.001	0.0017	0.0534	0.0144	0.017	0.0003	0.0002	0.0004	6e-05	3.9e-05	0.0014	0.0034	7e-05	0.0068		9.2e-05	0.0002	0.0001			20	retained	retained	retained	retained	retained	retained
+B*42:02	B	matched_2field_direct	0.0076	Unclassified	Unclassified	117	0.0073	0.007			0.0002	0.0076	0.0031	0.002	0.0001	0.0001				0.0003	0.001	2.5e-05	0.0019		2.3e-05	5e-05	1.6e-05			15	retained	retained	retained	below_floor	below_floor	below_floor
+B*42:05	B	matched_2field_direct	2e-05	B07	mapped	117	2e-06	2e-05							9.3e-06					7e-06										4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:02	B	matched_2field_direct	0.0952	B44	mapped	77	0.0208	0.0131	0.072	0.057	0.0744	0.0158	0.0424	0.031	0.0952	0.0054	0.0173	0.0075	0.0162	0.0542	0.0413	0.0038	0.0403		0.0015	0.0085	0.0082			20	retained	retained	retained	retained	retained	retained
+B*44:03	B	matched_2field_direct	0.095	B44	mapped	77	0.0459	0.0424	0.044	0.025	0.0378	0.0577	0.0894	0.095	0.0467	0.0155	0.028	0.0605	0.085	0.03	0.047	0.014	0.0552		0.0275	0.0609	0.074			20	retained	retained	retained	retained	retained	retained
+B*44:04	B	matched_2field_direct	0.0006	B44	mapped	79	0.0001	5e-05			0.0004	0.0001	0.0002		0.0006	4.9e-05	4.3e-05	2e-05	1.3e-05	0.0001	0.0001	5e-06	0.0003		2.3e-05		1e-06			16	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:05	B	matched_2field_direct	0.0041	B44	mapped	77	0.0003	0.0002	0.001	0.001	0.0014	0.0003	0.0008	0.001	0.0029	0.0001	0.0003	0.0001	3.9e-05	0.0041	0.0011	4.5e-05	0.0013		3e-06	0.0001	4e-05			20	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*44:06	B	matched_2field_direct	0.0004	B07	mapped	126	1e-06	2e-05					3.5e-05		3.98e-05	1e-05				0.0002	8e-05		4.1e-05	0.0004		0.0002	0.0003			11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:07	B	matched_2field_direct	0.0001	B44	mapped	77	8.6e-05	0.0001																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:08	B	matched_2field_direct	4e-05	B62	mapped	77	8e-06				4e-05				3.22e-05					1.4e-05	6e-06									5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:09	B	matched_2field_direct	0.0001	Unclassified	Unclassified	77	1.7e-05				6e-05		4e-06		5.79e-05					2.8e-05	1.1e-05			0.0001						7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:10	B	matched_2field_direct	0.0015	Unclassified	Unclassified	77	0.0015	0.0012			3e-05	0.0009	0.0001		6.4e-06					7e-06	9e-05		0.0002				5e-06			10	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*44:12	B	matched_2field_direct	1e-05	Unclassified	Unclassified	126									4e-07								1e-05							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:15	B	matched_2field_direct	0.0007	Unclassified	Unclassified	77	1.2e-05	0.0007																						2	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:18	B	matched_2field_direct	5.3e-05	Unclassified	Unclassified	77	5.3e-05	2e-05							4e-07															3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:20	B	matched_2field_direct	5.2e-06	B44	mapped	77									5.2e-06						4e-06		3e-06							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:21	B	matched_2field_direct	4.2e-05	B44	mapped	74					3e-05		3e-05		8e-06					4.2e-05			7e-06				3e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:22	B	matched_2field_direct	2.4e-06	B44	mapped	77									2.4e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:24	B	matched_2field_direct	1e-05	B44	mapped	77					1e-05				6.4e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:27	B	ABSENT_no_afnd_row		B44	mapped	77																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as B*44:27	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+B*44:29	B	matched_2field_direct	0.0001	B44	mapped	81	5e-06				1e-05		1.3e-05		3.14e-05	2e-05				0.0001	1.1e-05		3e-06	0.0001		2e-05	3e-06			11	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*44:50	B	matched_2field_direct	1.1e-05		no_scheme_match	77	1.1e-05																7e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*45:01	B	matched_2field_direct	0.0495	B44	mapped	77	0.0495	0.0445	0.008	0.003	0.0063	0.044	0.0263	0.026	0.0059	0.001	0.0053	0.0004	8.4e-05	0.0071	0.0145	0.002	0.0171		0.0001	0.0011	0.0009			20	retained	retained	retained	retained	retained	below_floor
+B*46:01	B	matched_2field_direct	0.1343	B62	mapped	94	7.2e-05	7e-05			0.0001	0.0006	0.0002		7.52e-05	0.0251	0.0104	0.041	0.0507	0.0003	0.0002	0.1343	0.0002		0.1194	0.0341	0.001			17	retained	retained	retained	retained	retained	retained
+B*47:01	B	matched_2field_direct	0.0034	Unclassified	Unclassified	75	0.001	0.0021	0.002	0.001	0.0018	0.0007	0.0024	0.002	0.0027	0.0002	0.0003	6e-05	0.0012	0.0034	0.0024	7e-05	0.0018		6e-06	0.0005	0.0006			20	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*47:02	B	matched_2field_direct	0.0001	Unclassified	Unclassified	75	2e-05	0.0001							1.33e-05					9.9e-05	2e-06									5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*47:03	B	matched_2field_direct	0.0011	Unclassified	Unclassified	75	0.0004	0.0011			4e-05	0.0003	1.7e-05		4e-07					3.5e-05	4e-06		2e-05							9	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*48:01	B	matched_2field_direct	0.0694	B27	mapped	75	0.0005	0.0004	0.012	0.057	0.0182	0.0004	0.0021	0.002	0.0007	0.0266	0.0694	0.0271	0.0367	0.0009	0.0254	0.0131	0.0142		0.006	0.0044	0.0037			20	retained	retained	retained	retained	retained	retained
+B*48:02	B	matched_2field_direct	0.003	B27	mapped	78	1.4e-05				1e-05	0.0002	0.0023	0.003	7.2e-06	1e-05	4.3e-05			7e-06	0.0001		0.0013							11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*48:03	B	matched_2field_direct	0.005	B27	mapped	75	5e-06	4e-05			6e-05		2.7e-05		2.8e-06	0.0003	0.0002	4e-05	3.9e-05	1.4e-05	0.0008	0.0048	0.0005		0.005	0.0005	2.7e-05			16	retained	retained	retained	below_floor	below_floor	below_floor
+B*48:04	B	matched_2field_direct	0.0036	B27	mapped	75									2e-07					1.4e-05	8e-06	6.3e-05			2.3e-05	0.002	0.0036			7	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*48:05	B	matched_2field_direct	0.0001	B27	mapped	68	1.7e-05	0.0001													3e-06						3e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*48:06	B	matched_2field_direct	1.1e-05	Unclassified	Unclassified	125	5e-06						4e-06								1.1e-05		1e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*48:07	B	matched_2field_direct	0.0011	B27	mapped	75	4e-06				0.0011		4e-06		4e-07						3.4e-05		7e-06							6	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*48:12	B	matched_2field_direct	5.1e-05	B27	mapped	75							1.7e-05								2e-06		5.1e-05				1e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*48:13	B	matched_2field_direct	5.5e-05	B27	mapped	75							9e-06		2e-07								5.5e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*49:01	B	matched_2field_direct	0.038	Unclassified	Unclassified	71	0.0279	0.038	0.017	0.011	0.0145	0.0263	0.0264	0.022	0.0158	0.002	0.0049	0.0005	0.0003	0.0377	0.0225	0.0006	0.0257		0.0002	0.0061	0.0061			20	retained	retained	retained	retained	retained	below_floor
+B*50:01	B	matched_2field_direct	0.0297	B44	mapped	71	0.0089	0.0117	0.009	0.008	0.0079	0.0088	0.0207	0.02	0.0105	0.0013	0.0033	0.0005	0.0014	0.0297	0.0133	0.0027	0.015		0.0021	0.0152	0.0172			20	retained	retained	retained	retained	retained	below_floor
+B*50:02	B	matched_2field_direct	0.0024	B44	mapped	70	0.0001	0.0002	0.001		0.0004	0.0002	0.0017	0.001	0.0004	8.9e-05	0.0008	8e-05	6e-06	0.0004	0.0024	5e-06	0.002				8e-06			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*50:04	B	matched_2field_direct	7e-05	B44	mapped	71									4e-07					7e-06						7e-05	7e-05			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:01	B	matched_2field_direct	0.0918	B07	mapped	123	0.0217	0.0241	0.056	0.057	0.0678	0.0226	0.0638	0.062	0.0473	0.0376	0.0236	0.089	0.0918	0.0781	0.0578	0.0457	0.0605		0.0228	0.067	0.0747			20	retained	retained	retained	retained	retained	retained
+B*51:02	B	matched_2field_direct	0.0132	B07	mapped	123	0.0008	0.0006	0.005	0.004	0.0076	0.0005	0.001		6.96e-05	0.0054	0.0015	0.0026	0.0065	0.0002	0.0081	0.0122	0.0024		0.0132	0.0033	0.0002			19	retained	retained	retained	retained	below_floor	below_floor
+B*51:03	B	matched_2field_direct	8e-06	B07	mapped	121							4e-06		8e-07					7e-06							8e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:04	B	matched_2field_direct	0.0001	B07	mapped	123	1e-06	4e-05					2.6e-05		1.6e-06	2e-05				7e-06	8e-06		0.0001				1.1e-05			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:05	B	matched_2field_direct	0.0233	B07	mapped	127	1.4e-05	9e-05			4e-05	2e-05	2.2e-05		0.0002		8.7e-05	2e-05		0.0019	4.6e-05		5.1e-05	0.0233	4.6e-05	0.0002	1.1e-05			15	retained	retained	retained	retained	retained	below_floor
+B*51:06	B	matched_2field_direct	0.0192	B07	mapped	123	1.6e-05	2e-05			7e-05	0.0002	9e-06	0.001	1.57e-05	0.0192	0.0102	4e-05	0.0002	0.0001	6.1e-05	0.0001	4.1e-05		0.0012	0.005	0.0071			18	retained	retained	retained	retained	below_floor	below_floor
+B*51:07	B	matched_2field_direct	0.0017	Unclassified	Unclassified	123	6.8e-05	7e-05	0.001	0.001	0.0003	8e-05	0.0005		0.0005	0.0002	8.7e-05	0.0001	1.9e-05	0.0017	0.0006	0.0008	0.0009		9.2e-05	0.0014	0.0014			19	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*51:08	B	matched_2field_direct	0.0047	B07	mapped	127	0.0001	0.0012	0.001	0.001	0.0007	0.0002	0.0039	0.004	0.0012	0.0001	0.0003	2e-05	1.9e-05	0.0047	0.001	0.0001	0.0018			0.0009	0.0009			19	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*51:09	B	matched_2field_direct	0.002	B07	mapped	127	0.0007	0.0007		0.002	0.0013	0.0008	0.0001		0.0005	5.9e-05	2.2e-05	7e-05	6.2e-05	0.0003	0.0002	1.8e-05	0.0002		3e-06	4e-05	4.6e-05			18	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*51:10	B	matched_2field_direct	0.0004	B07	mapped	125	1e-05						8.7e-05								1.3e-05		0.0004							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:13	B	matched_2field_direct	0.0004	B07	mapped	123					1e-05		3.9e-05		4e-07					7e-06	0.0001		0.0004							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:14	B	matched_2field_direct	0.0002	B07	mapped	123					3e-05		4e-06		3.2e-06						0.0002		4.6e-05							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:17	B	matched_2field_direct	2.4e-05	B07	mapped	123																					2.4e-05			1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:19	B	matched_2field_direct	0.0002	B07	mapped	129									3.2e-06				1.3e-05	2.8e-05					2e-06	2e-05	0.0002			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:21	B	matched_2field_direct	7e-06	B07	mapped	124									2.8e-06					7e-06										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:22	B	matched_2field_direct	0.0004	Unclassified	Unclassified	123	1e-06						4.8e-05		7.6e-06	1e-05					2.5e-05		0.0004							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:23	B	matched_2field_direct	2.3e-05	B07	mapped	122									1.2e-06						2.3e-05		7e-06							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:29	B	matched_2field_direct	6.3e-05	B07	mapped	123									2.8e-06					6.3e-05			3e-06							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:34	B	matched_2field_direct	1.4e-05	B07	mapped	120	1e-06								5.2e-06					1.4e-05							8e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:40	B	matched_2field_direct	2.3e-05		no_scheme_match	127									2.8e-06	2.3e-05						1e-05								3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:43	B	matched_2field_direct	1.33e-05		no_scheme_match	123	1e-06								1.33e-05						1e-06		1e-06							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*51:50	B	matched_2field_direct	1.2e-06		no_scheme_match	123									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*52:01	B	matched_2field_direct	0.099	B62	mapped	71	0.0154	0.0172	0.014	0.007	0.0066	0.0204	0.0213	0.032	0.0089	0.0057	0.0103	0.099	0.0252	0.0331	0.026	0.0134	0.0205		0.0086	0.0592	0.0745			20	retained	retained	retained	retained	retained	retained
+B*52:02	B	matched_2field_direct	0.0001	B62	mapped	71	1e-06						9e-06		8e-07						2e-06		0.0001							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*52:03	B	matched_2field_direct	3.4e-05	B62	mapped	78															3.4e-05		2.4e-05			1e-05				3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*52:04	B	matched_2field_direct	0.0003	B62	mapped	71									4e-07		4.3e-05									0.0003	0.0003			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*52:21	B	ABSENT_no_afnd_row			no_scheme_match	71																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as B*52:21	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+B*53:01	B	matched_2field_direct	0.1281	B07	mapped	127	0.1178	0.1213	0.011	0.002	0.0073	0.1281	0.0287	0.032	0.0034	0.0008	0.004	0.0003	0.0001	0.0121	0.0123	0.0003	0.0195		0.0002	0.0014	0.0013			20	retained	retained	retained	retained	retained	retained
+B*53:05	B	matched_2field_direct	7.8e-05	Unclassified	Unclassified	127	1.2e-05				1e-05	3e-05	4e-06		1.13e-05					7.8e-05			1e-05			4e-05	4e-06			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*53:06	B	matched_2field_direct	4e-07	B07	mapped	123									4e-07															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*54:01	B	matched_2field_direct	0.0572	B07	mapped	117	3e-05						3.5e-05		3.82e-05	0.0053	0.0034		0.0572	0.0003	5.9e-05	0.0304	9.2e-05		0.0244	0.0038	0.0003			13	retained	retained	retained	retained	retained	retained
+B*55:01	B	matched_2field_direct	0.0219	B07	mapped	113	0.004	0.0028	0.014	0.011	0.0143	0.004	0.0087	0.007	0.0186	0.0011	0.0055	0.001	0.0007	0.0219	0.009	0.0008	0.0091		0.0008	0.0155	0.0203			20	retained	retained	retained	retained	retained	below_floor
+B*55:02	B	matched_2field_direct	0.0502	B07	mapped	117	6.6e-05	7e-05			4e-05	9e-05	4.8e-05		3.42e-05	0.009	0.0502	0.0272	0.0164	4.9e-05	9.2e-05	0.0276	8.9e-05		0.019	0.0076	0.0005			17	retained	retained	retained	retained	retained	retained
+B*55:04	B	matched_2field_direct	0.0009	B07	mapped	117	2e-06				1e-05					0.0002	2.2e-05	0.0009	0.0009			0.0005			0.0005	0.0001	1e-06			10	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+B*55:07	B	matched_2field_direct	0.0004	B07	mapped	117									4e-07	3e-05			0.0004		4e-06	0.0002	1e-06			4e-05				7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*55:12	B	matched_2field_direct	0.0001	Unclassified	Unclassified	117										6.9e-05						0.0001			1.1e-05	4e-05				4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*56:01	B	matched_2field_direct	0.0261	B07	mapped	116	0.0023	0.0018	0.004	0.005	0.0044	0.0022	0.0073	0.009	0.0064	0.0034	0.0261	0.0093	0.0042	0.0036	0.0041	0.0061	0.0034		0.0068	0.0063	0.0061			20	retained	retained	retained	retained	retained	below_floor
+B*56:02	B	matched_2field_direct	0.0115	B07	mapped	116	1e-06	5e-05					2e-06		4.4e-06		0.0115			7e-06	1e-06	5e-06	1.7e-05		1.1e-05	2e-05	3e-06			12	retained	retained	retained	retained	below_floor	below_floor
+B*56:03	B	matched_2field_direct	0.0018	B07	mapped	112	4e-06								1.2e-06	0.0007	0.0002		3.2e-05		2e-06	0.0018	3e-06		0.0004	0.0002	1.6e-05			11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*56:04	B	matched_2field_direct	0.0406	B07	mapped	116	1.1e-05						2e-06			0.0046	0.0406		8e-05	7e-06	7e-06	0.0014			0.0112	0.0016	8.7e-05			11	retained	retained	retained	retained	retained	below_floor
+B*56:10	B	matched_2field_direct	0.0001	B07	mapped	117										2e-05	4.3e-05					0.0001			5.7e-05	7e-05	5e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*56:15	B	matched_2field_direct	2.1e-05	B07	mapped	116									2.4e-06					2.1e-05	6e-06		1e-05			2e-05				5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*57:01	B	matched_2field_direct	0.0676	B58	mapped	31	0.0071	0.0058	0.029	0.019	0.0268	0.0067	0.0153	0.02	0.0365	0.0039	0.0161	0.0013	0.0042	0.0219	0.0127	0.0051	0.0152		0.0257	0.0479	0.0676			20	retained	retained	retained	retained	retained	retained
+B*57:02	B	matched_2field_direct	0.0061	B58	mapped	31	0.0038	0.0061			0.0002	0.0043	0.0012	0.002	0.0003	1e-05	8.7e-05	2e-05	1.3e-05	0.0008	0.0004	1.5e-05	0.0007			0.0002	2.4e-05			17	retained	retained	retained	below_floor	below_floor	below_floor
+B*57:03	B	matched_2field_direct	0.0362	B58	mapped	31	0.0318	0.0359	0.002		0.001	0.0362	0.0258	0.031	0.0007	4.9e-05	0.0007	2e-05	6e-06	0.0023	0.0034	6.5e-05	0.0062		6e-06	0.0004	0.0002			19	retained	retained	retained	retained	retained	below_floor
+B*57:04	B	matched_2field_direct	0.0024	B58	mapped	31	0.0019	0.0019			4e-05	0.0024	0.0002		3.2e-06					1.4e-05	1.3e-05		9.2e-05			2e-05	3e-06			11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*57:05	B	matched_2field_direct	3e-05	B58	mapped	31	3e-05	2e-05														2e-06								3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*58:01	B	matched_2field_direct	0.0874	B58	mapped	31	0.0378	0.0425	0.01	0.006	0.007	0.0405	0.0233	0.026	0.0073	0.0404	0.0145	0.0076	0.0603	0.0173	0.009	0.0874	0.0142		0.0692	0.0478	0.042			20	retained	retained	retained	retained	retained	retained
+B*58:02	B	matched_2field_direct	0.0422	B58	mapped	31	0.0422	0.0376	0.004		0.0018	0.0316	0.007	0.009	0.0001	7.9e-05	0.0005		6e-06	0.0002	0.0024	3.5e-05	0.0037		6.9e-05	0.0001	5.7e-05			18	retained	retained	retained	retained	retained	below_floor
+B*58:04	B	matched_2field_direct	3.9e-05	B58	mapped	15	1.3e-05								1e-07		1.9e-05		3.9e-05			2e-05			4e-06		2e-06			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*59:01	B	matched_2field_direct	0.0224	Unclassified	Unclassified	128	7e-06				4e-05	1e-05	4e-06		2.8e-06	5.9e-05	0.0007	0.0224	0.0167		4e-06	0.0006	3e-06			7e-05	1.9e-05			14	retained	retained	retained	retained	retained	below_floor
+B*67:01	B	matched_2field_direct	0.0101	B07	mapped	118	0.0001	0.0001			0.0001	0.0002	0.0001		6.52e-05	0.0007	0.0003	0.0091	0.0101	2.1e-05	8.8e-05	0.0041	0.0001		0.0002	0.0001	4e-05			17	retained	retained	retained	retained	below_floor	below_floor
+B*67:02	B	matched_2field_direct	4e-05	Unclassified	Unclassified	90	4e-06	4e-05																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*73:01	B	matched_2field_direct	0.0028	B27	mapped	106	0.0002	0.0011			8e-05	0.0002	0.0009	0.001	0.0004	0.0002	8.7e-05		1.9e-05	0.0028	0.0006	7e-05	0.0007		0.0006	0.0005	0.0002			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*78:01	B	matched_2field_direct	0.0099	B07	mapped	123	0.0099	0.0079	0.001		0.0005	0.007	0.0036	0.004	2.25e-05		0.0002	6e-05	1.9e-05	0.0002	0.0009	2.5e-05	0.0011			2e-05	3.8e-05			17	retained	retained	retained	below_floor	below_floor	below_floor
+B*78:02	B	matched_2field_direct	0.0001	B07	mapped	123	2.6e-05						4.3e-05		3.82e-05	0.0001			6e-06	1.4e-05	1.3e-05		3.1e-05		4.6e-05		5e-06			10	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*78:04	B	matched_2field_direct	0.0001	B07	mapped	127					3e-05				1.2e-06						0.0001		6.5e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+B*81:01	B	matched_2field_direct	0.0199	B07	mapped	114	0.0199	0.0178	0.001		0.0005	0.0182	0.003	0.004	7.56e-05	0.0009	0.0002	8e-05	0.0001	0.0001	0.0013	0.0011	0.0023		0.0001	0.0002	5.1e-05			19	retained	retained	retained	retained	below_floor	below_floor
+B*81:02	B	ABSENT_no_afnd_row		B07	mapped	114																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as B*81:02	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+B*82:01	B	matched_2field_direct	0.0029	Unclassified	Unclassified	115	0.0028	0.0029			1e-05	0.0022	0.0004		4e-06		4.3e-05			7e-06	0.0003		0.0002				5e-06			11	retained	retained	below_floor	below_floor	below_floor	below_floor
+B*82:02	B	matched_2field_direct	0.0003	Unclassified	Unclassified	115	0.0003	0.0002			7e-05	0.0002	1.3e-05							4.2e-05	4e-06		2e-05			4e-05				9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:02	C	matched_2field_direct	0.1915	C_locus	NULL_C_by_design	95	0.0078	0.0048	0.046	0.053	0.0492	0.0086	0.0237	0.025	0.0341	0.0465	0.1291	0.1732	0.1677	0.026	0.0507	0.1915	0.0544		0.1673	0.069	0.0351			20	retained	retained	retained	retained	retained	retained
+C*01:03	C	matched_2field_direct	0.0022	C_locus	NULL_C_by_design	95									6.3e-06	0.0003	0.0002		0.0022	2.8e-05		0.0014			0.0007	0.0003	3.4e-05			9	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*01:06	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	99									1.3e-06				2.9e-05			0.0002			2.1e-05					4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:07	C	matched_2field_direct	4e-06	C_locus	NULL_C_by_design	95									3e-06						4e-06									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:08	C	matched_2field_direct	8.8e-05	C_locus	NULL_C_by_design	91										4.9e-05						8.8e-05			3.3e-05	5e-05				4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:10	C	matched_2field_direct	7.7e-05	C_locus	NULL_C_by_design	93							1.9e-05								1.1e-05		7.7e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:17	C	matched_2field_direct	7.6e-05	C_locus	NULL_C_by_design	89									1.2e-06	1.4e-05			1.5e-05			2e-05				4e-05	7.6e-05			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*01:27	C	matched_2field_direct	2.8e-06	C_locus	NULL_C_by_design	95									2.8e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:02	C	matched_2field_direct	0.089	C_locus	NULL_C_by_design	93	0.089	0.0847	0.043	0.088	0.0554	0.0807	0.0624	0.064	0.0435	0.0029	0.0064	0.0015	0.007	0.0348	0.0336	0.0036	0.0367		0.0018	0.0081	0.0093			20	retained	retained	retained	retained	retained	retained
+C*02:04	C	matched_2field_direct	0.0001	C_locus	NULL_C_by_design	93	2e-06				0.0001									1e-05	4e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:06	C	matched_2field_direct	0.0001	C_locus	NULL_C_by_design	93	6e-06				0.0001				1.4e-05					1e-05										4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:07	C	matched_2field_direct	1.2e-05	C_locus	NULL_C_by_design	93	2e-06								3.2e-06					1.2e-05	7e-06		7e-06							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:08	C	matched_2field_direct	7.3e-05	C_locus	NULL_C_by_design	93									1.5e-06					2e-05			1.4e-05			5e-05	7.3e-05			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:10	C	matched_2field_direct	0.0006	C_locus	NULL_C_by_design	93																		0.0006						1	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+C*02:14	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	93	9.8e-05	0.0002												1.1e-05			1.9e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:02	C	matched_2field_direct	0.0874	C_locus	NULL_C_by_design	94	0.0185	0.0177	0.006	0.005	0.0023	0.02	0.0065	0.014	0.0022	0.0402	0.0135	0.0076	0.0628	0.008	0.0037	0.0874	0.0049		0.0719	0.0473	0.0419			20	retained	retained	retained	retained	retained	retained
+C*03:03	C	matched_2field_direct	0.1485	C_locus	NULL_C_by_design	94	0.0129	0.0091	0.044	0.044	0.0417	0.0118	0.0292	0.025	0.0534	0.0273	0.024	0.1485	0.1195	0.0289	0.0366	0.0473	0.0298		0.0397	0.0203	0.0152			20	retained	retained	retained	retained	retained	retained
+C*03:04	C	matched_2field_direct	0.206	C_locus	NULL_C_by_design	94	0.0565	0.0486	0.082	0.206	0.1016	0.0497	0.0452	0.045	0.0749	0.0646	0.1173	0.1269	0.1013	0.0284	0.0726	0.1165	0.0602		0.072	0.044	0.0162			20	retained	retained	retained	retained	retained	retained
+C*03:05	C	matched_2field_direct	0.0197	C_locus	NULL_C_by_design	94	4.2e-05		0.004		5e-05	0.0008	0.0172	0.012	2.11e-05	6.5e-05	9.5e-05		2.4e-05	9e-05	0.0072		0.0197		3.4e-05					14	retained	retained	retained	retained	below_floor	below_floor
+C*03:06	C	matched_2field_direct	0.0331	C_locus	NULL_C_by_design	94	4e-06		0.001		0.0001		0.0001		1.43e-05	2.3e-05			1.8e-05	1.8e-05	0.0103		0.0026	0.0331						11	retained	retained	retained	retained	retained	below_floor
+C*03:07	C	matched_2field_direct	8e-05	C_locus	NULL_C_by_design	94	5e-06				8e-05		1.3e-05		1.01e-05						6.3e-05	1.3e-05	7.7e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:08	C	matched_2field_direct	6.7e-05	C_locus	NULL_C_by_design	103									4.7e-06						6.7e-05		4.4e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:09	C	matched_2field_direct	5.9e-06	C_locus	NULL_C_by_design	94	1e-06								5.9e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:10	C	matched_2field_direct	6.6e-06	C_locus	NULL_C_by_design	94	2e-06								6.6e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:14	C	matched_2field_direct	3.37e-05	C_locus	NULL_C_by_design	92	5e-06								3.37e-05	1.5e-05				1.1e-05	8e-06									5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:16	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	95	3e-06				0.0002	3e-05			1.16e-05					3e-05	4e-06		1.2e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:17	C	matched_2field_direct	0.0001	C_locus	NULL_C_by_design	94										1.8e-05					4e-06	0.0001			9.1e-05	4e-05				5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:19	C	matched_2field_direct	4.5e-05	C_locus	NULL_C_by_design	94									8.6e-06					4.5e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:35	C	matched_2field_direct	1.6e-06	C_locus	NULL_C_by_design	94									1.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:36	C	matched_2field_direct	5.6e-05	C_locus	NULL_C_by_design	98																5.6e-05								1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:40	C	matched_2field_direct	8e-06	C_locus	NULL_C_by_design	94									6.7e-06								8e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*03:88	C	matched_2field_direct	6.6e-05	C_locus	NULL_C_by_design	94																					6.6e-05			1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:01	C	matched_2field_direct	0.2279	C_locus	NULL_C_by_design	89	0.2037	0.2072	0.134	0.111	0.1312	0.2279	0.1486	0.152	0.1059	0.1716	0.1558	0.0404	0.0556	0.1689	0.171	0.0434	0.1756		0.0383	0.1148	0.1364			20	retained	retained	retained	retained	retained	retained
+C*04:03	C	matched_2field_direct	0.0711	C_locus	NULL_C_by_design	89	0.0001	0.0001	0.001		0.0003	0.0004	0.0004	0.001	7.48e-05	0.0531	0.0711	0.0003	0.0003	0.0004	8.2e-05	0.0112	0.0003		0.045	0.0189	0.0138			19	retained	retained	retained	retained	retained	retained
+C*04:04	C	matched_2field_direct	0.1143	C_locus	NULL_C_by_design	89	9.4e-05	7e-05	0.004	0.003	0.0069	0.0001			3.32e-05	8e-05	6.8e-05	7e-05	1.4e-05	0.0001	6.5e-05	1.6e-05	2.6e-05	0.1143	1.6e-05	0.0001	1.3e-05			19	retained	retained	retained	retained	retained	retained
+C*04:05	C	matched_2field_direct	3.2e-06	C_locus	NULL_C_by_design	89									3.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:06	C	matched_2field_direct	0.0123	C_locus	NULL_C_by_design	89									7e-07	0.0123	0.001		1.5e-05		4.1e-05	9.9e-05			0.0015	0.0017	4.1e-05			9	retained	retained	retained	retained	below_floor	below_floor
+C*04:07	C	matched_2field_direct	0.0013	C_locus	NULL_C_by_design	89	0.0006	0.0013					7.2e-05		1.06e-05					7.6e-05	1.8e-05		5.5e-05							7	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*04:08	C	matched_2field_direct	6.8e-05	C_locus	NULL_C_by_design	88	6.8e-05	5e-05					1.6e-05		2.2e-06					1.1e-05	4e-06		1.4e-05							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:10	C	matched_2field_direct	0.0008	C_locus	NULL_C_by_design	95										2.7e-05	0.0003		2.7e-05	2.7e-05	6e-06	4.2e-05	1.5e-05		4.2e-05	0.0004	0.0008			10	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:13	C	matched_2field_direct	0.0004	C_locus	NULL_C_by_design	86	0.0001	0.0002			4e-05	0.0004	3.2e-05																	5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:19	C	matched_2field_direct	1.3e-05	C_locus	NULL_C_by_design	89															1.3e-05		6e-06							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:27	C	matched_2field_direct	0.0003	C_locus	NULL_C_by_design	89	6.1e-05	0.0003																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*04:82	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	89																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*04:82	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*05:01	C	matched_2field_direct	0.0939	C_locus	NULL_C_by_design	95	0.0336	0.0246	0.079	0.062	0.0761	0.0285	0.0556	0.036	0.0939	0.0054	0.0184	0.0072	0.0162	0.0452	0.0575	0.0036	0.0579		0.0015	0.0086	0.0084			20	retained	retained	retained	retained	retained	retained
+C*05:04	C	matched_2field_direct	2.4e-05	C_locus	NULL_C_by_design	95							9e-06								5e-06		2.4e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*05:05	C	matched_2field_direct	1.67e-05	C_locus	NULL_C_by_design	95	3e-06								1.67e-05															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*05:08	C	matched_2field_direct	5.7e-05	C_locus	NULL_C_by_design	95					4e-05				9.1e-06				5.7e-05											3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*05:09	C	matched_2field_direct	0.0001	C_locus	NULL_C_by_design	95	3e-06				4e-05		0.0001		7.7e-06					3.9e-05	0.0001		0.0001							7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*05:10	C	matched_2field_direct	3e-05	C_locus	NULL_C_by_design	95					3e-05				3.7e-06															2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*05:14	C	matched_2field_direct	7e-07	C_locus	NULL_C_by_design	95									7e-07															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:02	C	matched_2field_direct	0.1391	C_locus	NULL_C_by_design	89	0.0865	0.0878	0.074	0.053	0.0697	0.0716	0.074	0.078	0.0932	0.0137	0.0316	0.0105	0.0548	0.1032	0.0603	0.0447	0.0614		0.0426	0.1073	0.1391			20	retained	retained	retained	retained	retained	retained
+C*06:04	C	matched_2field_direct	4e-05	C_locus	NULL_C_by_design	89		4e-05							5.6e-06				2e-05		5e-06									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:06	C	matched_2field_direct	5.1e-05	C_locus	NULL_C_by_design	89	1e-05				3e-05	3e-05			2.57e-05				1.6e-05	5.1e-05	5e-06		9e-06				1e-05			9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:07	C	matched_2field_direct	2e-05	C_locus	NULL_C_by_design	89	3e-06	2e-05							5.7e-06					1.8e-05	5e-06						6e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:08	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	87	0.0002	5e-05					2.8e-05		2.4e-06						4e-06		8e-06							6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:09	C	matched_2field_direct	0.0001	C_locus	NULL_C_by_design	89	5.1e-05				4e-05										1.5e-05		7e-06			0.0001				5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*06:27	C	matched_2field_direct	6.1e-05	C_locus	NULL_C_by_design	89																				6e-05	6.1e-05			2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:01	C	matched_2field_direct	0.16	C_locus	NULL_C_by_design	100	0.117	0.1306	0.119	0.098	0.1172	0.1161	0.1418	0.14	0.16	0.024	0.0443	0.0073	0.0354	0.1476	0.0917	0.0101	0.102		0.0321	0.0866	0.1039			20	retained	retained	retained	retained	retained	retained
+C*07:02	C	matched_2field_direct	0.2894	C_locus	NULL_C_by_design	86	0.0713	0.0683	0.145	0.1	0.151	0.0664	0.0761	0.073	0.1413	0.2894	0.1273	0.1218	0.0822	0.0739	0.1366	0.1944	0.1214		0.1553	0.1294	0.1078			20	retained	retained	retained	retained	retained	retained
+C*07:04	C	matched_2field_direct	0.0218	C_locus	NULL_C_by_design	86	0.0072	0.0083	0.011	0.006	0.0116	0.0051	0.0091	0.011	0.0154	0.0189	0.0076	0.0094	0.009	0.0111	0.0048	0.0064	0.0055		0.014	0.0218	0.0155			20	retained	retained	retained	retained	retained	below_floor
+C*07:05	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	86	0.0001	0.0002					4.6e-05			3.8e-05				3.9e-05	1.4e-05		2e-05				7e-06			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:06	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	100																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*07:06	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*07:07	C	matched_2field_direct	2.2e-05	C_locus	NULL_C_by_design	100									9.5e-06						5e-06		2.2e-05				5e-06			4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:10	C	matched_2field_direct	1.11e-05	C_locus	NULL_C_by_design	86	2e-06								1.11e-05	1e-05														3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:12	C	matched_2field_direct	1.7e-05	C_locus	NULL_C_by_design	86							1.7e-05		1.66e-05					9e-06	1.1e-05									4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:13	C	matched_2field_direct	1.5e-06	C_locus	NULL_C_by_design	86									1.5e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:17	C	matched_2field_direct	0.0004	C_locus	NULL_C_by_design	86	4e-06	3e-05			4e-05		1.2e-05		3.5e-06					4e-06	0.0002	2e-05	0.0004							9	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:18	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	100																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*07:18	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*07:19	C	matched_2field_direct	8e-05	C_locus	NULL_C_by_design	100	2.4e-05	8e-05							2.7e-06															3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:21	C	matched_2field_direct	4.1e-05	C_locus	NULL_C_by_design	100									2.5e-06					4.1e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:22	C	matched_2field_direct	0.004	C_locus	NULL_C_by_design	100	3e-06								3.7e-06									0.004						3	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*07:24	C	matched_2field_direct	3.6e-06	C_locus	NULL_C_by_design	100									3.6e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:25	C	matched_2field_direct	5.5e-06	C_locus	NULL_C_by_design	85									5.5e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:26	C	matched_2field_direct	0.0041	C_locus	NULL_C_by_design	100		0.0001								1.6e-05				7.1e-05	3e-06				2.1e-05	0.0013	0.0041			7	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*07:27	C	matched_2field_direct	0.0009	C_locus	NULL_C_by_design	86	1.1e-05						2.4e-05		8.6e-06	0.0009	9.8e-05		3.3e-05	4.6e-05	1e-05	2.6e-05	3.2e-05		1.6e-05	4e-05	2.7e-05			13	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:29	C	matched_2field_direct	0.0003	C_locus	NULL_C_by_design	86									3.7e-06	2.4e-05				1e-05	9e-06		7e-06			0.0002	0.0003			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:35	C	matched_2field_direct	5.2e-05	C_locus	NULL_C_by_design	100	5.2e-05	5e-05															2.1e-05							3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:40	C	matched_2field_direct	1.4e-05	C_locus	NULL_C_by_design	102									4.3e-06					1.4e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:43	C	matched_2field_direct	5.4e-05	C_locus	NULL_C_by_design	86									8e-07							3.3e-05			5.4e-05					3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:46	C	matched_2field_direct	2.8e-06	C_locus	NULL_C_by_design	86									2.8e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:56	C	matched_2field_direct	7e-05	C_locus	NULL_C_by_design	86										1.6e-05			2.2e-05			4.3e-05				7e-05				4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:60	C	matched_2field_direct	1.2e-06	C_locus	NULL_C_by_design	100									1.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*07:66	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	86																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*07:66	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*07:67	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	86																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*07:67	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*07:72	C	matched_2field_direct	1.3e-05	C_locus	NULL_C_by_design	86									1.7e-06					1.3e-05										2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*08:01	C	matched_2field_direct	0.1644	C_locus	NULL_C_by_design	97	0.0011	0.0011	0.014	0.028	0.0222	0.0015	0.0021	0.003	0.0004	0.1002	0.0931	0.0682	0.0738	0.0011	0.0362	0.1043	0.0149		0.1644	0.0499	0.0283			20	retained	retained	retained	retained	retained	retained
+C*08:02	C	matched_2field_direct	0.0526	C_locus	NULL_C_by_design	95	0.034	0.0368	0.035	0.025	0.0286	0.0329	0.0458	0.037	0.0385	0.0039	0.0119	0.0019	0.0124	0.0409	0.0512	0.0012	0.0526		0.0006	0.003	0.0019			20	retained	retained	retained	retained	retained	retained
+C*08:03	C	matched_2field_direct	0.0129	C_locus	NULL_C_by_design	97	7e-05		0.004	0.012	0.0044	0.0001	0.0006	0.001	0.0004	0.0002	0.0002	0.0129	0.0066	0.0003	0.0016	0.004	0.0033		0.0019	0.0023	0.0018			19	retained	retained	retained	retained	below_floor	below_floor
+C*08:04	C	matched_2field_direct	0.0104	C_locus	NULL_C_by_design	95	0.0098	0.0095	0.001		0.0002	0.0104	0.0022	0.004	1.5e-05	2.8e-05	0.0001	0.0001		9.5e-05	0.0005		0.0009				1.6e-05			15	retained	retained	retained	retained	below_floor	below_floor
+C*08:05	C	matched_2field_direct	9e-06	C_locus	NULL_C_by_design	89	2e-06								4e-06						9e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*08:06	C	matched_2field_direct	0.022	C_locus	NULL_C_by_design	96				0.022	8e-05				3.8e-06				1.9e-05			1.8e-05								5	retained	retained	retained	retained	retained	below_floor
+C*08:10	C	matched_2field_direct	4.2e-05	C_locus	NULL_C_by_design	97							9e-06		1.1e-06					1.3e-05	4.2e-05		3.1e-05							5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*08:12	C	matched_2field_direct	0.0006	C_locus	NULL_C_by_design	95							1.1e-05		2.9e-06									0.0006						3	retained	below_floor	below_floor	below_floor	below_floor	below_floor
+C*08:13	C	matched_2field_direct	2.3e-05	C_locus	NULL_C_by_design	95	8e-06														2.3e-05									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*08:22	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	97																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*08:22	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*12:02	C	matched_2field_direct	0.1	C_locus	NULL_C_by_design	89	0.0011	0.0028	0.012	0.007	0.0048	0.0044	0.0115	0.022	0.0087	0.0122	0.0163	0.1	0.0268	0.033	0.0112	0.0307	0.0116		0.0189	0.0643	0.0813			20	retained	retained	retained	retained	retained	retained
+C*12:03	C	matched_2field_direct	0.0911	C_locus	NULL_C_by_design	89	0.0149	0.0183	0.035	0.02	0.0265	0.0169	0.0438	0.041	0.0486	0.0051	0.0253	0.0019	0.0056	0.0911	0.0393	0.0176	0.0415		0.0143	0.0413	0.0491			20	retained	retained	retained	retained	retained	retained
+C*12:04	C	matched_2field_direct	0.0192	C_locus	NULL_C_by_design	89	3e-06				0.0001	7e-05	2.3e-05		4.8e-06	0.0192	0.01	7e-05	2.9e-05		5.7e-05	4e-05	4.1e-05		1.8e-05	0.0013	0.0027			15	retained	retained	retained	retained	below_floor	below_floor
+C*12:05	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	95	6e-06						1.3e-05		3.04e-05					0.0002	7e-06		1.2e-05			0.0002	4.2e-05			8	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*12:09	C	matched_2field_direct	8.9e-05	C_locus	NULL_C_by_design	95									6e-07					1.1e-05		2e-05				6e-05	8.9e-05			5	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*12:12	C	matched_2field_direct	9.4e-05	C_locus	NULL_C_by_design	84							9.4e-05		2.5e-06						2.6e-05		2.1e-05							4	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*12:13	C	matched_2field_direct	6.9e-06	C_locus	NULL_C_by_design	89	3e-06								6.9e-06						4e-06									3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*12:16	C	matched_2field_direct	2.2e-06	C_locus	NULL_C_by_design	89									2.2e-06															1	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*14:02	C	matched_2field_direct	0.0823	C_locus	NULL_C_by_design	95	0.0165	0.0155	0.011	0.01	0.0135	0.0185	0.0246	0.029	0.0127	0.0135	0.0085	0.0781	0.0823	0.0236	0.0095	0.0406	0.0154		0.0225	0.0373	0.0336			20	retained	retained	retained	retained	retained	retained
+C*14:03	C	matched_2field_direct	0.0576	C_locus	NULL_C_by_design	95	0.0015	0.0008	0.001		0.0001	0.0015	0.0001		6.29e-05	9.5e-05	0.0005	0.0576	0.0517	0.0005	8.3e-05	0.0042	0.0002		0.0002	0.0002	7.7e-05			18	retained	retained	retained	retained	retained	retained
+C*14:04	C	matched_2field_direct	2e-05	C_locus	NULL_C_by_design	89	3e-06								1.96e-05	1.7e-05				2e-05			1.2e-05				1.5e-05			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*14:05	C	matched_2field_direct	6e-06	C_locus	NULL_C_by_design	95									5.7e-06						6e-06									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*14:11	C	matched_2field_direct	5e-06	C_locus	NULL_C_by_design	95									3.3e-06						5e-06									2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:02	C	matched_2field_direct	0.1077	C_locus	NULL_C_by_design	104	0.0054	0.0044	0.036	0.024	0.0435	0.0064	0.0375	0.04	0.0223	0.0681	0.058	0.0196	0.0193	0.0372	0.0355	0.0256	0.0393		0.0186	0.0829	0.1077			20	retained	retained	retained	retained	retained	retained
+C*15:03	C	matched_2field_direct	1.6e-05	C_locus	NULL_C_by_design	101									8e-07								1.6e-05							2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:04	C	matched_2field_direct	0.002	C_locus	NULL_C_by_design	104	7e-06	5e-05		0.002	6e-05		0.0002		7.52e-05	4.5e-05	9.2e-05	5e-05	1.8e-05	0.0016	0.0002	4.2e-05	0.0001		3.8e-05	0.0008	0.0003			17	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*15:05	C	matched_2field_direct	0.0718	C_locus	NULL_C_by_design	104	0.013	0.0156	0.003	0.001	0.002	0.0169	0.0072	0.01	0.0035	0.001	0.0014	0.0005	0.0065	0.0139	0.0054	0.0074	0.0061		0.0718	0.0099	0.0115			20	retained	retained	retained	retained	retained	retained
+C*15:06	C	matched_2field_direct	0.0003	C_locus	NULL_C_by_design	104	4e-06								5.12e-05					0.0003	2.5e-05		2.2e-05			0.0001	1.2e-05			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:07	C	matched_2field_direct	0.0002	C_locus	NULL_C_by_design	104	6e-06								3.4e-06	1.8e-05					5e-06		1.3e-05			6e-05	0.0002			7	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:08	C	matched_2field_direct	3e-05	C_locus	NULL_C_by_design	104																	2.8e-05			3e-05	1.1e-05			3	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:09	C	matched_2field_direct	0.0037	C_locus	NULL_C_by_design	104	4e-06				0.0002	3e-05	7.6e-05		1.33e-05					4e-05	0.0037		0.0019		5.1e-05		1e-05			10	retained	retained	below_floor	below_floor	below_floor	below_floor
+C*15:11	C	matched_2field_direct	7.48e-05	C_locus	NULL_C_by_design	95	1.5e-05								7.48e-05					1e-05	3.8e-05	2.4e-05					9e-06			6	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*15:13	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	104																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*15:13	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*15:22	C	matched_2field_direct	4e-05	C_locus	NULL_C_by_design	104	2e-05	4e-05																						2	below_floor	below_floor	below_floor	below_floor	below_floor	below_floor
+C*16:01	C	matched_2field_direct	0.0969	C_locus	NULL_C_by_design	92	0.0969	0.0914	0.036	0.018	0.0281	0.0966	0.085	0.083	0.0338	0.0027	0.0151	0.0016	0.0001	0.0169	0.0473	0.0002	0.0503		0.0003	0.0013	0.0007			20	retained	retained	retained	retained	retained	retained
+C*16:02	C	matched_2field_direct	0.0279	C_locus	NULL_C_by_design	92	0.0002	0.0032	0.003		0.001	0.0007	0.0151	0.018	0.0027	0.0002	0.002	0.0001	7.4e-05	0.0157	0.0038	0.0007	0.0039		0.0014	0.0192	0.0279			19	retained	retained	retained	retained	retained	below_floor
+C*16:04	C	matched_2field_direct	0.0116	C_locus	NULL_C_by_design	92	4.3e-05	0.0015		0.001	0.0002	3e-05	0.0002		0.0006	0.0003	0.0001		1.8e-05	0.0116	0.0003	0.0002	0.0003			0.0007	0.0003			16	retained	retained	retained	retained	below_floor	below_floor
+C*17:01	C	matched_2field_direct	0.0715	C_locus	NULL_C_by_design	87	0.0681	0.0715	0.012	0.002	0.0082	0.0679	0.0299	0.029	0.0088	0.0014	0.0084	0.0007	0.0002	0.0338	0.0144	0.0005	0.02		0.0007	0.0043	0.0039			20	retained	retained	retained	retained	retained	retained
+C*17:03	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	87																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*17:03	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate
+C*18:01	C	matched_2field_direct	0.0347	C_locus	NULL_C_by_design	89	0.0315	0.0325	0.001		0.0007	0.0347	0.0036	0.005	0.0003	7.9e-05	0.0003			0.0006	0.002	3.7e-05	0.0038		0.0002	0.0005	7.5e-05			17	retained	retained	retained	retained	retained	below_floor
+C*18:02	C	ABSENT_no_afnd_row		C_locus	NULL_C_by_design	89																						GENUINELY ABSENT (existed at 3.4.0, unobserved)	present at 3.4.0 as C*18:02	0	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate	unmatched_separate

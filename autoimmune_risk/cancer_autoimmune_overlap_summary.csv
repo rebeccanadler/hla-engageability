@@ -1,0 +1,4 @@
+level,cancer_set,autoimmune_set,overlap_N,overlap_members
+exact 4-digit allele,"B*15:01, B*18:01, B*44:02, B*44:03, B*44:05, B*50:01","A*03:01, A*11:01, A*29:02, A*32:01, A*66:01, B*07:02, B*15:02, B*27:05, B*35:02, B*39:06, B*44:03, B*49:01, B*51:01, B*52:01, B*57:01, B*58:01, C*04:01, C*06:02, C*16:01",1,B*44:03
+2-digit group,"A*03, B*15, B*18, B*44, B*50","A*03, A*11, A*29, A*32, A*66, B*07, B*15, B*27, B*35, B*39, B*44, B*49, B*51, B*52, B*57, B*58, C*04, C*06, C*16",3,A*03; B*15; B*44
+Sidney supertype (prior work),12 supertype HRs,13 anchors (pre-protective-tail),10,anchors inheriting a supertype-level favorability HR

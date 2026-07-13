@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "HLA class I engageability: a sequence-derived axis of immune potency and a reproducible HLA-LOH escape finding"
+authors:
+  - family-names: Nadler
+    given-names: Rebecca
+    affiliation: "Weill Cornell / Memorial Sloan Kettering / Rockefeller (MD-PhD)"
+date-released: 2026-07-13
+license: MIT
+keywords:
+  - HLA class I
+  - engageability
+  - TCR recognition
+  - HLA loss of heterozygosity
+  - immune escape
+  - antigen presentation
+  - immunotherapy
+abstract: >
+  A sequence-derived, HED-orthogonal metric of HLA class I "engageability" (TCR-facing
+  surface permissiveness), a multi-axis decomposition of immunogenic potency, an
+  identifiability analysis of allele-level ICB outcome associations, and a reproducible
+  somatic finding: a locus-wide HLA-B loss/retention hierarchy under HLA-LOH with
+  HLA-B*58:01 preferentially lost. Built for the Claude Science Hackathon 2026 (research track).

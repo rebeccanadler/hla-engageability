@@ -1,0 +1,3 @@
+pair,crest14,crest_identical,supertypes,pocket_diffs,mature_diffs,source
+B*08:01 / B*18:01,RNQITNTERVATEW,True,B08 / B44 (from favorability_supertype_layer.csv),7.0,18.0,"IMGT/HLA B_prot.txt (ref B*07:02:01:01), independent parse"
+B*35:01 / B*35:08,RNQITNTERVALEW,True,B07 / B07 (from favorability_supertype_layer.csv),,,"same-family, unremarkable"

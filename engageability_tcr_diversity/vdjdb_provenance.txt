@@ -1,0 +1,12 @@
+VDJdb FETCH PROVENANCE (recorded at fetch, this session — fetched-or-flagged rule 1)
+release_tag: 2026-05-16
+release_name: "Blooming May release"
+release_published_at: 2026-05-18T21:39:08Z
+repo: github.com/antigenomics/vdjdb-db
+master_commit_sha: 33890018950e8bb607fe50537a01389b1160d5ac
+release_target_commitish: master
+download_url: https://github.com/antigenomics/vdjdb-db/releases/download/2026-05-16/vdjdb-2026-05-16.zip
+zip_sha256: 0dce79ec55c109000da10b7bc72300e352ffb7df92d5de30682de20bab35a366
+zip_bytes: 34643377
+access_date_utc: 2026-07-09T18:10:08Z
+table_used: vdjdb.txt (full)  rows_incl_header: 228035  data_rows: 228034

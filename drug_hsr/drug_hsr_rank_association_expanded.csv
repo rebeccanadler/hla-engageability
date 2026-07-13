@@ -1,0 +1,4 @@
+label,n,anchor_median,anchor_mean_pct,bg_median,MWU_p,rank_biserial
+3-anchor (S8 original),3,0.833,75.6,-0.089,0.124,-0.514
+6-anchor expanded (all independent alleles),6,0.429,64.8,-0.089,0.21,-0.297
+5 distinct engageability profiles (B57/B58 deduped),5,0.024,60.9,-0.089,0.398,-0.219

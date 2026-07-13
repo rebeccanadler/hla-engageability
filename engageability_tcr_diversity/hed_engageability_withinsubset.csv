@@ -1,0 +1,6 @@
+scope,hed_col,spearman_rho,spearman_p,pearson_r,pearson_p,n
+catalog_unweighted,mean_HED_181scope,-0.0376,0.3285,-0.0212,0.5829,676
+catalog_unweighted,mean_HED,-0.0378,0.326,-0.0293,0.447,676
+subset_unweighted,mean_HED_181scope,0.0,1.0,0.0968,0.7313,15
+subset_unweighted,mean_HED,0.0,1.0,0.0968,0.7313,15
+subset_entry_weighted,mean_HED_181scope,,,-0.3587,,15
